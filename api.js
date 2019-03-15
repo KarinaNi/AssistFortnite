@@ -9,7 +9,7 @@ export function getDailyStore() {
         });
 }
 
-export function getUserID(username) {
+export async function getUserID(username) {
     return fetch('https://fortnite-public-api.theapinetwork.com/prod09/users/id?username='+username)
         .then((response) => {
             return response.json()})
