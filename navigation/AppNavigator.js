@@ -1,10 +1,10 @@
 import {createStackNavigator, createAppContainer} from 'react-navigation';
-import HomeScreen from '../Screens/HomeScreen';
-import ItemShopScreen from '../Screens/ItemShopScreen'
-import RandomDropGeneratorScreen from '../Screens/RandomDropGeneratorScreen';
-import StatTrackerScreen from '../Screens/StatTrackerScreen'
-import WeeklyChallengesScreen from '../Screens/WeeklyChallengesScreen'
-import WeekScreen from '../Screens/WeekScreen'
+import HomeScreen from '../screens/HomeScreen';
+import ItemShopScreen from '../screens/ItemShopScreen'
+import RandomDropGeneratorScreen from '../screens/RandomDropGeneratorScreen';
+import StatTrackerScreen from '../screens/StatTrackerScreen'
+import WeeklyChallengesScreen from '../screens/WeeklyChallengesScreen'
+import WeekScreen from '../screens/WeekScreen'
 
 
 const MainNavigator = createStackNavigator(
