@@ -43,5 +43,26 @@ export default StyleSheet.create({
         top: 0,
         bottom: 0,
         backgroundColor: 'rgba(43, 75, 149, 0.25)',
+    },
+    homeScreenButtonStyle: {
+        flex:1,
+        margin:15,
+        borderRadius:5, 
+        borderWidth:2, 
+        borderColor:'#9d4dbb', 
+        backgroundColor:'rgba(43, 75, 149, 0.25)',
+        alignItems:'center',
+        justifyContent:'center'
+    },
+    homeScreenButtonText:{
+        color:'#9d4dbb', 
+        fontSize:20, 
+        fontWeight:"bold", 
+        justifyContent:'center', 
+        alignItems:'center',
+        flex:1,
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-evenly'
     }
 })
