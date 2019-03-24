@@ -57,12 +57,21 @@ export default StyleSheet.create({
     homeScreenButtonText:{
         color:'#9d4dbb', 
         fontSize:20, 
-        fontWeight:"bold", 
-        justifyContent:'center', 
-        alignItems:'center',
+        fontWeight:'bold', 
+        textAlign:'center'
+    },
+    weeksList: {
         flex:1,
-        flexDirection:'row',
-        alignItems:'center',
-        justifyContent:'space-evenly'
-    }
+        margin:10,
+        padding:25,
+        borderRadius:5, 
+        borderWidth:2, 
+        justifyContent:'space-evenly',
+        borderColor:'#9d4dbb', 
+        backgroundColor:'rgba(43, 75, 149, 0.25)',
+        color:'#9d4dbb', 
+        fontSize:40, 
+        fontWeight:'bold', 
+        textAlign:'center'
+    },
 })
