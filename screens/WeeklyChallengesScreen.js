@@ -4,9 +4,6 @@ import { getChallenges } from '../api';
 import styles from '../styles';
 import background from '../assets/images/background.jpg'
 
-// Array of Weeks
-let weeksList = [1,2,3,4,5,6,7,8,9,10];
-
 export default class WeeklyChallengesScreen extends React.Component {
   static navigationOptions = {
     title: 'Weekly Challenges',
@@ -15,6 +12,10 @@ export default class WeeklyChallengesScreen extends React.Component {
   constructor(props) {
     super(props);  
     let dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    this.state = {
+      weeks: dataSource.cloneWithRows([1,2,3,4,5,6,7,8,9,10]),
+      challenges: []
+    };
     //get data using API
     let challenges;
     let season = "current";
@@ -28,17 +29,18 @@ export default class WeeklyChallengesScreen extends React.Component {
           { cancelable: false })
         return;
       }      
-      challenges = challengesVal;
+      this.state.challenges = challengesVal;
     })
-    
-    this.state = {
-      weeks: dataSource.cloneWithRows(weeksList),
-      challenges: challenges,
-    };
   }
 
   handleWeekButton(rowData){
-    this.props.navigation.navigate("WeekScreen", {challenges:this.state.challenges});
+    console.log(" current week: " + this.state.challenges.currentweek);
+    console.log("week selected: " + rowData);
+    if(rowData > this.state.challenges.currentweek){
+      Alert.alert("Week " + rowData + " has not happened yet.")
+    }else{
+      this.props.navigation.navigate("WeekScreen", {week:rowData, challenges:this.state.challenges});
+    }
   }
 
   render() {
