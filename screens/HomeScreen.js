@@ -140,7 +140,7 @@ export default class HomeScreen extends React.Component {
             onPress={() => this.handleWeeklyChallengesPress()}  
             style={styles.homeScreenButtonStyle}>
             <View style={{flex:1, alignItems: 'center', justifyContent: 'center'}}>
-              <Text style={{color:'#9d4dbb', fontSize: 20, fontWeight:"bold"}}>Weekly Challenges</Text>
+              <Text style={styles.homeScreenButtonText}>*** Random Drop ***</Text>
             </View>
           </TouchableOpacity>
 
