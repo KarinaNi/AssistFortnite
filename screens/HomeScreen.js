@@ -78,6 +78,10 @@ export default class HomeScreen extends React.Component {
     }
   }
 
+  handleWeeklyChallengesPress() {
+    this.props.navigation.navigate("WeeklyChallengesScreen");
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -123,6 +127,25 @@ export default class HomeScreen extends React.Component {
           </View>
           
         </View>
+
+        <View style={{flex: 0.25, flexDirection: 'row', justifyContent: 'space-evenly'}}>
+          <TouchableOpacity 
+            onPress={() => this.handleWeeklyChallengesPress()}  
+            style={styles.homeScreenButtonStyle}>
+            <View style={{flex:1, alignItems: 'center', justifyContent: 'center'}}>
+              <Text style={styles.homeScreenButtonText}>Weekly Challenges</Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity 
+            onPress={() => this.handleWeeklyChallengesPress()}  
+            style={styles.homeScreenButtonStyle}>
+            <View style={{flex:1, alignItems: 'center', justifyContent: 'center'}}>
+              <Text style={styles.homeScreenButtonText}>*** Random Drop ***</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+
         </ImageBackground>
         
         {this.state.loading &&
