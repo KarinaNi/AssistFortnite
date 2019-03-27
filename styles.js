@@ -74,4 +74,18 @@ export default StyleSheet.create({
         fontWeight:'bold', 
         textAlign:'center'
     },
+    challengeList:{
+        flex:1,
+        margin:10,
+        padding:25,
+        borderRadius:5, 
+        borderWidth:2, 
+        justifyContent:'space-evenly',
+        borderColor:'#9d4dbb', 
+        backgroundColor:'rgba(43, 75, 149, 0.25)',
+        color:'white', 
+        fontSize:18, 
+        fontWeight:'bold', 
+        textAlign:'center'
+    },
 })
