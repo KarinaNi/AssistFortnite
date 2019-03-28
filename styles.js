@@ -88,4 +88,14 @@ export default StyleSheet.create({
         fontWeight:'bold', 
         textAlign:'center'
     },
+    dropButtonStyle: {
+        flex:0.1,
+        margin:15,
+        borderRadius:5, 
+        borderWidth:2, 
+        borderColor:'#9d4dbb', 
+        backgroundColor:'rgba(43, 75, 149, 0.25)',
+        alignItems:'center',
+        justifyContent:'center'
+    },
 })
