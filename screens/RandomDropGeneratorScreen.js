@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../styles';
 import background from '../assets/images/background.jpg';
-import { View, Button, Text, ImageBackground } from 'react-native';
+import { View, Button, Text, ImageBackground, TouchableOpacity } from 'react-native';
 
 export default class RandomDropGeneratorScreen extends React.Component {
   static navigationOptions = {
@@ -59,6 +59,7 @@ export default class RandomDropGeneratorScreen extends React.Component {
     return (
       <View style={styles.container}>
         <ImageBackground source={background} style={{ flex: 1 }}>
+          
           <View style={styles.homeScreenStatTrackerView}>
             <Text style={{color:'#9d4dbb', fontSize: 25, fontWeight:"bold"}}>
               {'Drop Location'}
@@ -67,7 +68,15 @@ export default class RandomDropGeneratorScreen extends React.Component {
               {this.state.PlaceHolder}
             </Text>
           </View>
-          <Button title="Drop" onPress={this.GenerateRandomLocation} />      
+    
+          <TouchableOpacity 
+            onPress={() => this.GenerateRandomLocation()}  
+            style={styles.dropButtonStyle}>
+            <View style={{flex:1, alignItems: 'center', justifyContent: 'center'}}>
+              <Text style={styles.homeScreenButtonText}>Drop</Text>
+            </View>
+          </TouchableOpacity>
+
         </ImageBackground>
       </View>
     )
