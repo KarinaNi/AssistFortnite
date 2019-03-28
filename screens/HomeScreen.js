@@ -1,6 +1,6 @@
 import React from 'react';
 import {Picker, TextInput, Text, TouchableOpacity, View, ImageBackground, ActivityIndicator, Alert} from 'react-native';
-import { getUserID } from '../api';
+import { getUserID, getUserStats } from '../api';
 import styles from '../styles';
 import background from '../assets/images/background.jpg'
 
@@ -33,8 +33,20 @@ export default class HomeScreen extends React.Component {
         this.setState({loading:false});
         return;
       }
-      this.setState({loading:false});
-      this.props.navigation.navigate("StatTrackerScreen", {username: userVal.username, uid: userVal.uid, platformType: this.state.platformType, platformName: this.state.platformName})
+      getUserStats(userVal.uid).then(statVal=> {
+        if(statVal.data[this.state.platformType] === undefined) {
+          Alert.alert('No stats found',
+            'No stats found for ' +userVal.username + ' on ' + this.state.platformName,
+            [
+              {text: 'OK', onPress: () => console.log('OK Pressed')},
+            ],
+            { cancelable: false })
+          this.setState({loading:false});
+          return;
+        }
+        this.setState({loading:false});
+        this.props.navigation.navigate("StatTrackerScreen", {username: userVal.username, userStats:statVal.data[this.state.platformType], platformName: this.state.platformName})
+      })
     })
   }
 
@@ -64,7 +76,7 @@ export default class HomeScreen extends React.Component {
       case 'nintendo':
         this.setState({
           pickerPlatform: 'nintendo',
-          platformType: 'nintendo',
+          platformType: 'gamepad',
           platformName: 'Nintendo'
         });
         break;
