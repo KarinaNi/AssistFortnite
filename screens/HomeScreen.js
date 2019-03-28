@@ -82,6 +82,10 @@ export default class HomeScreen extends React.Component {
     this.props.navigation.navigate("WeeklyChallengesScreen");
   }
 
+  handleRandGenPress() {
+    this.props.navigation.navigate("RandomDropGeneratorScreen");
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -138,10 +142,10 @@ export default class HomeScreen extends React.Component {
           </TouchableOpacity>
 
           <TouchableOpacity 
-            onPress={() => this.handleWeeklyChallengesPress()}  
+            onPress={() => this.handleRandGenPress()}  
             style={styles.homeScreenButtonStyle}>
             <View style={{flex:1, alignItems: 'center', justifyContent: 'center'}}>
-              <Text style={styles.homeScreenButtonText}>*** Random Drop ***</Text>
+              <Text style={styles.homeScreenButtonText}>Random Drop</Text>
             </View>
           </TouchableOpacity>
         </View>
