@@ -1,8 +1,9 @@
 import React from 'react';
-import {Picker, TextInput, Text, TouchableOpacity, View, ImageBackground, ActivityIndicator, Alert} from 'react-native';
+import {Picker, TextInput, Text, TouchableOpacity, View, ImageBackground, ActivityIndicator, Alert, BackAndroid} from 'react-native';
 import { getUserID, getUserStats } from '../api';
 import styles from '../styles';
 import background from '../assets/images/background.jpg'
+import {NetInfo} from 'react-native';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -18,6 +19,19 @@ export default class HomeScreen extends React.Component {
       platformName: 'PC',
       loading: false,
     };
+  }
+
+  componentDidMount() {
+    NetInfo.getConnectionInfo().then((connectionInfo) => {
+      if (connectionInfo.type === 'none') {
+        Alert.alert('No Network Connection',
+        'A network connection is necessary to use the Assistant for Fortnite!',
+        [
+          {text: 'Close Assistant for Fortnite', onPress: () => BackAndroid.exitApp()},
+        ],
+        { cancelable: false })
+      }
+    });
   }
 
   handleTrackPress() {
