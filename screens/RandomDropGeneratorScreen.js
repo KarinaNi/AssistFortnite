@@ -11,16 +11,17 @@ export default class RandomDropGeneratorScreen extends React.Component {
   constructor(){
   
       super();
-  
+
       this.state={
 
-        PlaceHolder : ''
-  
+        PlaceHolder : '',
+
+        StratHolder : ''
+
       }
   }
-
   
-  GenerateRandomLocation=()=>
+  GenerateRandom=()=>
   {
 
   var RandomPlace = [
@@ -29,7 +30,6 @@ export default class RandomDropGeneratorScreen extends React.Component {
     'Sunny Steps',
     'Lazy Lagoon',
     'Shifty Shafts',
-    'Salty Springs',
     'Salty Springs',
     'Dusty Divot',
     'Lonely Lodge',
@@ -53,24 +53,50 @@ export default class RandomDropGeneratorScreen extends React.Component {
     PlaceHolder : RandomPlace
    
   })
+
+  var RandomStrat = [
+    'Pistols Only',
+    'No Shield',
+    'No Builds',
+    'Couch Walk',
+    'One Gun',
+    'No Heals'  
+  ]
+
+  var RandomStrat = RandomStrat[Math.floor(Math.random() * RandomStrat.length)]
+
+  this.setState({
+ 
+    StratHolder : RandomStrat
+   
+  })
   }
 
   render() {
     return (
       <View style={styles.container}>
         <ImageBackground source={background} style={{ flex: 1 }}>
+
+          <View style={styles.homeScreenStatTrackerView}>
+            <Text style={{color:'#9d4dbb', fontSize: 25, fontWeight:"bold"}}>
+              {'Strategy'}
+            </Text>
+            <Text style={{color:'#ffffff', fontSize: 40, fontWeight:"bold", marginBottom: 5}}>
+              {this.state.StratHolder}
+            </Text>
+          </View>
           
           <View style={styles.homeScreenStatTrackerView}>
             <Text style={{color:'#9d4dbb', fontSize: 25, fontWeight:"bold"}}>
               {'Drop Location'}
             </Text>
-            <Text style={{color:'#9d4dbb', fontSize: 25, fontWeight:"bold", marginBottom: 5}}>
+            <Text style={{color:'#ffffff', fontSize: 40, fontWeight:"bold", marginBottom: 5}}>
               {this.state.PlaceHolder}
             </Text>
           </View>
     
           <TouchableOpacity 
-            onPress={() => this.GenerateRandomLocation()}  
+            onPress={() => this.GenerateRandom()} 
             style={styles.dropButtonStyle}>
             <View style={{flex:1, alignItems: 'center', justifyContent: 'center'}}>
               <Text style={styles.homeScreenButtonText}>Drop</Text>
