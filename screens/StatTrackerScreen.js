@@ -119,9 +119,6 @@ export default class StatTrackerScreen extends React.Component {
   }
 
   render() {
-    // console.log("render state")
-    // console.log(this.state.stats)
-    // console.log("loading " + this.state.loading)
     return (
       <View style={styles.container}>
         <ImageBackground source={background} style={{ flex: 1 }}>
