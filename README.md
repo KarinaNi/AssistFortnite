@@ -1,12 +1,19 @@
-# AssistFortnite
-Assist for Fortnite App
+# Assistant for Fortnite App
 
-To build the app, need an android emulator/device with the expo app installed.
-In command line, you would need to have node js and npm install.
 
-To build this, go to command line, type any of the following commands and press enter.
-npm start
+## Build Requirements:
+- Android emulator/device
+- npm
+- expo cli
 
-After the command, there would be a localhost website on the web browser open. 
-After running the javascript bundle, the app would either open up on the emulator, if you are using that option or 
-if you have a real android phone connected, you could go to the expo app and scan and have the app show up there.
+## To Build:
+
+1. Clone/download repo
+2. In the project folder 'run npm install'
+3. In the project folder 'run npm start'
+4. Follow expo instructions to run app on your emulator/device
+
+For detailed Expo instructions visit [Up and Running](https://docs.expo.io/versions/latest/workflow/up-and-running/).
+
+Our application is also published on Expo [here](https://expo.io/@bowenclow/fortniteAssistant).
+Where it can be run on your own Android device or the provided in-browser emulator.
