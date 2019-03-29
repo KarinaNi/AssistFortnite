@@ -129,9 +129,12 @@ export default class HomeScreen extends React.Component {
                 <View style={{ flex: 1 }}>
                   <TextInput
                     style={{ paddingLeft: 10, margin: 3, flex: 1, borderRadius: 5, borderWidth: 2, color: '#ffffff', borderColor: '#9d4dbb' }}
-                    placeholder='username'
+                    placeholder='Enter Username Here'
                     placeholderTextColor='#ffffff'
                     onChangeText={(text) => this.setState({ username: text })}
+                    autoCapitalize='none'
+                    autoCorrect={false}
+                    autoComplete='off'
                   />
                 </View>
                 <View style={{ flex: 1, margin: 3, borderRadius: 5, borderWidth: 2, borderColor: '#9d4dbb' }}>
