@@ -78,7 +78,7 @@ export default class RandomDropGeneratorScreen extends React.Component {
         <ImageBackground source={background} style={{ flex: 1 }}>
 
           <View style={styles.homeScreenStatTrackerView}>
-            <Text style={{color:'#9d4dbb', fontSize: 25, fontWeight:"bold"}}>
+            <Text style={{color:'#ffffff', fontSize: 25, fontWeight:"bold"}}>
               {'Strategy'}
             </Text>
             <Text style={{color:'#ffffff', fontSize: 40, fontWeight:"bold", marginBottom: 5}}>
@@ -87,7 +87,7 @@ export default class RandomDropGeneratorScreen extends React.Component {
           </View>
           
           <View style={styles.homeScreenStatTrackerView}>
-            <Text style={{color:'#9d4dbb', fontSize: 25, fontWeight:"bold"}}>
+            <Text style={{color:'#ffffff', fontSize: 25, fontWeight:"bold"}}>
               {'Drop Location'}
             </Text>
             <Text style={{color:'#ffffff', fontSize: 40, fontWeight:"bold", marginBottom: 5}}>
