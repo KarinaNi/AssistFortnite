@@ -77,6 +77,8 @@ export default class RandomDropGeneratorScreen extends React.Component {
       <View style={styles.container}>
         <ImageBackground source={background} style={{ flex: 1 }}>
 
+        <View style={{flex:1, flexDirection:'column', justifyContent:'space-evenly'}}>
+
           <View style={styles.homeScreenStatTrackerView}>
             <Text style={{color:'#ffffff', fontSize: 25, fontWeight:"bold"}}>
               {'Strategy'}
@@ -102,6 +104,8 @@ export default class RandomDropGeneratorScreen extends React.Component {
               <Text style={styles.homeScreenButtonText}>Drop</Text>
             </View>
           </TouchableOpacity>
+
+          </View>
 
         </ImageBackground>
       </View>
