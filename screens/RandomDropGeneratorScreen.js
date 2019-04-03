@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../styles';
 import background from '../assets/images/background.jpg';
-import { View, Button, Text, ImageBackground, TouchableOpacity } from 'react-native';
+import { View, Text, ImageBackground, TouchableOpacity } from 'react-native';
 
 export default class RandomDropGeneratorScreen extends React.Component {
   static navigationOptions = {
@@ -9,67 +9,52 @@ export default class RandomDropGeneratorScreen extends React.Component {
   };
 
   constructor(){
-  
       super();
-
       this.state={
-
         PlaceHolder : '',
-
         StratHolder : ''
-
       }
   }
   
-  GenerateRandom=()=>
-  {
+  GenerateRandom = () => {
 
-  var RandomPlace = [
-    'Junk Junction',
-    'Haunted Hills',
-    'Sunny Steps',
-    'Lazy Lagoon',
-    'Shifty Shafts',
-    'Salty Springs',
-    'Dusty Divot',
-    'Lonely Lodge',
-    'Snobby Shores',
-    'Polar Peak',
-    'Pleasant Park',
-    'Fatal Fields',
-    'Retail Row',
-    'Paradise Palms',
-    'Frosty Flights',
-    'Loot Lake',
-    'Happy Hamlet',
-    'Tilted Towers',
-    'The Block'   
-  ]
+    var RandomPlace = [
+      'Junk Junction',
+      'Haunted Hills',
+      'Sunny Steps',
+      'Lazy Lagoon',
+      'Shifty Shafts',
+      'Salty Springs',
+      'Dusty Divot',
+      'Lonely Lodge',
+      'Snobby Shores',
+      'Polar Peak',
+      'Pleasant Park',
+      'Fatal Fields',
+      'Retail Row',
+      'Paradise Palms',
+      'Frosty Flights',
+      'Loot Lake',
+      'Happy Hamlet',
+      'Tilted Towers',
+      'The Block'   
+    ]
+    var RandomStrat = [
+      'Pistols Only',
+      'No Shield',
+      'No Builds',
+      'Couch Walk',
+      'One Gun',
+      'No Heals'  
+    ]
 
-  var RandomPlace = RandomPlace[Math.floor(Math.random() * RandomPlace.length)]
-
-  this.setState({
- 
-    PlaceHolder : RandomPlace
-   
-  })
-
-  var RandomStrat = [
-    'Pistols Only',
-    'No Shield',
-    'No Builds',
-    'Couch Walk',
-    'One Gun',
-    'No Heals'  
-  ]
-
-  var RandomStrat = RandomStrat[Math.floor(Math.random() * RandomStrat.length)]
-
-  this.setState({
- 
-    StratHolder : RandomStrat
-   
-  })
+    var RandomPlace = RandomPlace[Math.floor(Math.random() * RandomPlace.length)]
+    var RandomStrat = RandomStrat[Math.floor(Math.random() * RandomStrat.length)]
+    
+    this.setState({
+      PlaceHolder : RandomPlace,
+      StratHolder : RandomStrat
+    })
   }
 
   render() {
