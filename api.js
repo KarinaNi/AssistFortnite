@@ -37,3 +37,29 @@ export function getChallenges(season) {
         });
 }
 
+export function getUpcomingItems() {
+    return fetch('https://fortnite-public-api.theapinetwork.com/prod09/upcoming/get')
+        .then((response) => {
+            return response.json()})
+        .catch((error) => {
+        console.error(error);
+        });
+}
+
+export function getWeapons() {
+    return fetch('https://fortnite-public-api.theapinetwork.com/prod09/weapons/get')
+        .then((response) => {
+            return response.json()})
+        .catch((error) => {
+        console.error(error);
+        });
+}
+
+export function getServerStatus() {
+    return fetch('https://fortnite-public-api.theapinetwork.com/prod09/status/fortnite_server_status')
+        .then((response) => {
+            return response.json()})
+        .catch((error) => {
+        console.error(error);
+        });
+}
