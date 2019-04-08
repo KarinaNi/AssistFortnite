@@ -116,6 +116,18 @@ export default class HomeScreen extends React.Component {
     this.props.navigation.navigate("ItemShopScreen");
   }
 
+  handlePatchNotesPress(){
+    this.props.navigation.navigate("PatchNotesScreen");
+  }
+
+  handleUpcomingItemsPress(){
+    this.props.navigation.navigate("UpcomingItemsScreen");
+  }
+
+  handleWeaponStatsPress(){
+    this.props.navigation.navigate("WeaponStatsScreen");
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -182,15 +194,49 @@ export default class HomeScreen extends React.Component {
               </View>
             </TouchableOpacity>
           </View>
+          
+          <View style={{ flex: .3, flexDirection: 'row', justifyContent: 'space-evenly' }}>
+            <View style={{flex:1}}>
+              <TouchableOpacity
+                onPress={() => this.handleUpcomingItemsPress()}
+                style={styles.homeScreenButtonStyle}>
+                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                  <Text style={styles.homeScreenButtonText}>Upcoming Items</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
 
-          <View style={{flex:.3}}>
-            <TouchableOpacity
-              onPress={() => this.handleItemShopPress()}
-              style={styles.homeScreenButtonStyle}>
-              <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text style={styles.homeScreenButtonText}>Item Shop</Text>
-              </View>
-            </TouchableOpacity>
+            <View style={{flex:1}}>
+              <TouchableOpacity
+                onPress={() => this.handleItemShopPress()}
+                style={styles.homeScreenButtonStyle}>
+                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                  <Text style={styles.homeScreenButtonText}>Item Shop</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          <View style={{ flex: .3, flexDirection: 'row', justifyContent: 'space-evenly' }}>
+            <View style={{flex:1}}>
+              <TouchableOpacity
+                onPress={() => this.handlePatchNotesPress()}
+                style={styles.homeScreenButtonStyle}>
+                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                  <Text style={styles.homeScreenButtonText}>Patch Notes</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+
+            <View style={{flex:1}}>
+              <TouchableOpacity
+                onPress={() => this.handleWeaponStatsPress()}
+                style={styles.homeScreenButtonStyle}>
+                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                  <Text style={styles.homeScreenButtonText}>WeaponStats</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
 
         </ImageBackground>
