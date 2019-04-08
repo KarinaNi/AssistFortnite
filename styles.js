@@ -25,12 +25,12 @@ export default StyleSheet.create({
         margin:10,
     },
     sectionTitleTextStyle: {
-        color:'#9d4dbb',
+        color:'#ffffff',
         fontSize:20,
         fontWeight:"bold"
     },
     subTitleTextStyle: {
-        color:'#9d4dbb',
+        color:'#ffffff',
         fontSize:30,
         fontWeight:"bold"
     },
@@ -55,7 +55,7 @@ export default StyleSheet.create({
         justifyContent:'center'
     },
     homeScreenButtonText:{
-        color:'#9d4dbb', 
+        color:'#ffffff', 
         fontSize:20, 
         fontWeight:'bold', 
         textAlign:'center'
@@ -69,9 +69,33 @@ export default StyleSheet.create({
         justifyContent:'space-evenly',
         borderColor:'#9d4dbb', 
         backgroundColor:'rgba(43, 75, 149, 0.25)',
-        color:'#9d4dbb', 
+        color:'#ffffff', 
         fontSize:40, 
         fontWeight:'bold', 
         textAlign:'center'
+    },
+    challengeList:{
+        flex:1,
+        margin:10,
+        padding:25,
+        borderRadius:5, 
+        borderWidth:2, 
+        justifyContent:'space-evenly',
+        borderColor:'#9d4dbb', 
+        backgroundColor:'rgba(43, 75, 149, 0.25)',
+        color:'white', 
+        fontSize:18, 
+        fontWeight:'bold', 
+        textAlign:'center'
+    },
+    dropButtonStyle: {
+        flex:0.1,
+        margin:15,
+        borderRadius:5, 
+        borderWidth:2, 
+        borderColor:'#9d4dbb', 
+        backgroundColor:'rgba(43, 75, 149, 0.25)',
+        alignItems:'center',
+        justifyContent:'center'
     },
 })

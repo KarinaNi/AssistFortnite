@@ -1,0 +1,1041 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`homescreen tests renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#1F1F1F",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    accessibilityIgnoresInvertColors={true}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <Image
+      source={1}
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "height": undefined,
+            "width": undefined,
+          },
+          undefined,
+        ]
+      }
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgba(43, 75, 149, 0.25)",
+          "borderRadius": 5,
+          "flex": 0.3,
+          "flexDirection": "column",
+          "justifyContent": "center",
+          "margin": 15,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#ffffff",
+            "fontSize": 20,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Stat Tracker
+      </Text>
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "flexDirection": "row",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flex": 0.85,
+              "flexDirection": "column",
+              "justifyContent": "space-between",
+              "margin": 10,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flex": 1,
+              }
+            }
+          >
+            <TextInput
+              allowFontScaling={true}
+              autoCapitalize="none"
+              autoComplete="off"
+              autoCorrect={false}
+              onChangeText={[Function]}
+              placeholder="Enter Username Here"
+              placeholderTextColor="#ffffff"
+              style={
+                Object {
+                  "borderColor": "#9d4dbb",
+                  "borderRadius": 5,
+                  "borderWidth": 2,
+                  "color": "#ffffff",
+                  "flex": 1,
+                  "margin": 3,
+                  "paddingLeft": 10,
+                }
+              }
+              underlineColorAndroid="transparent"
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "borderColor": "#9d4dbb",
+                "borderRadius": 5,
+                "borderWidth": 2,
+                "flex": 1,
+                "margin": 3,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "flex": 1,
+                }
+              }
+            >
+              <RCTPicker
+                items={
+                  Array [
+                    Object {
+                      "label": "PC",
+                      "textColor": 4278190080,
+                      "value": "pc",
+                    },
+                    Object {
+                      "label": "Xbox",
+                      "textColor": 4278190080,
+                      "value": "xb1",
+                    },
+                    Object {
+                      "label": "Playstation",
+                      "textColor": 4278190080,
+                      "value": "ps4",
+                    },
+                    Object {
+                      "label": "Nintendo",
+                      "textColor": 4278190080,
+                      "value": "nintendo",
+                    },
+                    Object {
+                      "label": "Mobile",
+                      "textColor": 4278190080,
+                      "value": "touch",
+                    },
+                  ]
+                }
+                onChange={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                selectedIndex={0}
+                style={
+                  Array [
+                    Object {
+                      "height": 216,
+                    },
+                    undefined,
+                  ]
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "borderColor": "#9d4dbb",
+              "borderRadius": 5,
+              "borderWidth": 2,
+              "flex": 0.25,
+              "margin": 10,
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+                "justifyContent": "center",
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "#ffffff",
+                  "fontSize": 15,
+                  "fontWeight": "bold",
+                }
+              }
+            >
+              Track
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 0.3,
+          "flexDirection": "row",
+          "justifyContent": "space-evenly",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "rgba(43, 75, 149, 0.25)",
+            "borderColor": "#9d4dbb",
+            "borderRadius": 5,
+            "borderWidth": 2,
+            "flex": 1,
+            "justifyContent": "center",
+            "margin": 15,
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "justifyContent": "center",
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#ffffff",
+                "fontSize": 20,
+                "fontWeight": "bold",
+                "textAlign": "center",
+              }
+            }
+          >
+            Weekly Challenges
+          </Text>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "rgba(43, 75, 149, 0.25)",
+            "borderColor": "#9d4dbb",
+            "borderRadius": 5,
+            "borderWidth": 2,
+            "flex": 1,
+            "justifyContent": "center",
+            "margin": 15,
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "justifyContent": "center",
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#ffffff",
+                "fontSize": 20,
+                "fontWeight": "bold",
+                "textAlign": "center",
+              }
+            }
+          >
+            Random Drop
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 0.3,
+        }
+      }
+    >
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "rgba(43, 75, 149, 0.25)",
+            "borderColor": "#9d4dbb",
+            "borderRadius": 5,
+            "borderWidth": 2,
+            "flex": 1,
+            "justifyContent": "center",
+            "margin": 15,
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "justifyContent": "center",
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#ffffff",
+                "fontSize": 20,
+                "fontWeight": "bold",
+                "textAlign": "center",
+              }
+            }
+          >
+            Item Shop
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`homescreen tests renders the ActivityIndicator component 1`] = `
+<ActivityIndicator
+  animating={true}
+  color="#999999"
+  hidesWhenStopped={true}
+  size="large"
+/>
+`;
+
+exports[`homescreen tests renders the Background component 1`] = `
+<Image
+  style={
+    Object {
+      "height": 240,
+      "width": 320,
+    }
+  }
+/>
+`;
+
+exports[`itemshop screen tests renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#1F1F1F",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    accessibilityIgnoresInvertColors={true}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <Image
+      source={1}
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "height": undefined,
+            "width": undefined,
+          },
+          undefined,
+        ]
+      }
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgba(43, 75, 149, 0.25)",
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <ActivityIndicator
+        animating={true}
+        color="#152D53"
+        hidesWhenStopped={true}
+        size="large"
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`random dropper screen tests renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#1F1F1F",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    accessibilityIgnoresInvertColors={true}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <Image
+      source={1}
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "height": undefined,
+            "width": undefined,
+          },
+          undefined,
+        ]
+      }
+    />
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "column",
+          "justifyContent": "space-evenly",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "rgba(43, 75, 149, 0.25)",
+            "borderRadius": 5,
+            "flex": 0.3,
+            "flexDirection": "column",
+            "justifyContent": "center",
+            "margin": 15,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ffffff",
+              "fontSize": 25,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Strategy
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#ffffff",
+              "fontSize": 40,
+              "fontWeight": "bold",
+              "marginBottom": 5,
+            }
+          }
+        >
+          
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "rgba(43, 75, 149, 0.25)",
+            "borderRadius": 5,
+            "flex": 0.3,
+            "flexDirection": "column",
+            "justifyContent": "center",
+            "margin": 15,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ffffff",
+              "fontSize": 25,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Drop Location
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#ffffff",
+              "fontSize": 40,
+              "fontWeight": "bold",
+              "marginBottom": 5,
+            }
+          }
+        >
+          
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "rgba(43, 75, 149, 0.25)",
+            "borderColor": "#9d4dbb",
+            "borderRadius": 5,
+            "borderWidth": 2,
+            "flex": 0.1,
+            "justifyContent": "center",
+            "margin": 15,
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "justifyContent": "center",
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#ffffff",
+                "fontSize": 20,
+                "fontWeight": "bold",
+                "textAlign": "center",
+              }
+            }
+          >
+            Drop
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`stats screen tests renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#1F1F1F",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    accessibilityIgnoresInvertColors={true}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <Image
+      source={1}
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "height": undefined,
+            "width": undefined,
+          },
+          undefined,
+        ]
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(43, 75, 149, 0.25)",
+          "borderRadius": 5,
+          "flex": 0.95,
+          "justifyContent": "space-evenly",
+          "margin": 15,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "fontSize": 30,
+                "fontWeight": "bold",
+              },
+              Object {
+                "borderBottomWidth": 2,
+                "borderColor": "#9d4dbb",
+              },
+            ]
+          }
+        >
+          foo
+           on 
+          foo
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "borderColor": "#9d4dbb",
+            "borderRadius": 10,
+            "borderWidth": 3,
+            "flex": 0.15,
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "margin": 10,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "rgba(43, 75, 149, 0.25)",
+              "borderBottomLeftRadius": 5,
+              "borderTopLeftRadius": 5,
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "flex": 1,
+                "opacity": 1,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "justifyContent": "center",
+                  "margin": 15,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#ffffff",
+                    "fontSize": 20,
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                Solo
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "borderColor": "#9d4dbb",
+              "borderLeftWidth": 3,
+              "borderRightWidth": 3,
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "flex": 1,
+                "opacity": 1,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "justifyContent": "center",
+                  "margin": 15,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#ffffff",
+                    "fontSize": 20,
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                Duo
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            accessible={true}
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "flex": 1,
+                "opacity": 1,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flex": 1,
+                  "justifyContent": "center",
+                  "margin": 15,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#ffffff",
+                    "fontSize": 20,
+                    "fontWeight": "bold",
+                  }
+                }
+              >
+                Squad
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "flex": 0.75,
+            "flexDirection": "column",
+            "justifyContent": "space-evenly",
+            "marginLeft": 10,
+            "marginTop": 25,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ffffff",
+              "fontSize": 30,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Total Games Played:
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "fontSize": 30,
+                "fontWeight": "bold",
+              },
+              Object {
+                "alignSelf": "center",
+              },
+            ]
+          }
+        >
+          507
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#ffffff",
+              "fontSize": 30,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Win Rate:
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "fontSize": 30,
+                "fontWeight": "bold",
+              },
+              Object {
+                "alignSelf": "center",
+              },
+            ]
+          }
+        >
+          0.394 %
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#ffffff",
+              "fontSize": 30,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Kill/Death Ratio:
+        </Text>
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#ffffff",
+                "fontSize": 30,
+                "fontWeight": "bold",
+              },
+              Object {
+                "alignSelf": "center",
+              },
+            ]
+          }
+        >
+          1.081
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`weekly screen tests all weeks render correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#1F1F1F",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    accessibilityIgnoresInvertColors={true}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <Image
+      source={1}
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "height": undefined,
+            "width": undefined,
+          },
+          undefined,
+        ]
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`weekly screen tests each week screen renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#1F1F1F",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    accessibilityIgnoresInvertColors={true}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <Image
+      source={1}
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "height": undefined,
+            "width": undefined,
+          },
+          undefined,
+        ]
+      }
+    />
+  </View>
+</View>
+`;
