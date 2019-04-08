@@ -15,7 +15,6 @@ export default class StatTrackerScreen extends React.Component {
     super(props);
     this.state = {
       username: '',
-      platformType: '',
       platformName: '',
       stats: {},
       loading: true,
@@ -25,35 +24,30 @@ export default class StatTrackerScreen extends React.Component {
 
   componentDidMount() {
     let username = this.props.navigation.getParam('username', 'StatTrackerScreen: No username prop');
-    let platformType = this.props.navigation.getParam('platformType', 'StatTrackerScreen: No platformType prop');
     let platformName = this.props.navigation.getParam('platformName', 'StatTrackerScreen: No platformName prop');
-    let uid = this.props.navigation.getParam('uid', 'StatTrackerScreen: No uid prop');
-    getUserStats(uid).then(statVal => {
-      this.setState({ stats: statVal.data[platformType], loading: false, platformType: platformType, platformName: platformName, username: username})
-    });
+    let userStats= this.props.navigation.getParam('userStats', 'StatTrackerScreen: No userStats prop');
+    this.setState({ stats: userStats, platformName: platformName, username: username, loading: false});
   }
-
-  getPlatformName(platform) {
-    switch (platform) {
-      case 'keyboardmouse':
-        return 'PC';
-      case 'gamepad':
-        return 'Console';
-      case 'nintendo':
-        return 'Nintendo';
-      case 'touch':
-        return 'Mobile';
-    }
-  }
-
 
   getTotalGames() {
     if (this.state.mode === 'solo') {
-      return this.state.stats.defaultsolo.default.matchesplayed;
+        if (this.state.stats.defaultsolo == undefined) {
+          return 'No solo data';
+        } else {
+          return this.state.stats.defaultsolo.default.matchesplayed;
+        }
     } else if (this.state.mode === 'duo') {
-      return this.state.stats.defaultduo.default.matchesplayed;
+      if (this.state.stats.defaultduo == undefined) {
+        return 'No duo data';
+      } else {
+        return this.state.stats.defaultduo.default.matchesplayed;
+      }
     } else {
-      return this.state.stats.defaultsquad.default.matchesplayed;
+      if (this.state.stats.defaultsquad == undefined) {
+        return 'No squad data';
+      } else {
+        return this.state.stats.defaultsquad.default.matchesplayed;
+      }
     }
   }
 
@@ -61,38 +55,61 @@ export default class StatTrackerScreen extends React.Component {
     var total = this.getTotalGames();
     var ratio;
     if (this.state.mode === 'solo') {
-      console.log(this.state.stats.defaultsolo.default.placetop1)
-      if (this.state.stats.defaultsolo.default.placetop1 == undefined) {
-        return '0';
+      if (this.state.stats.defaultsolo == undefined) {
+        return 'No solo data';
       } else {
-        ratio = this.state.stats.defaultsolo.default.placetop1 / total;
+        if (this.state.stats.defaultsolo.default.placetop1 == undefined) {
+          return '0 %';
+        } else {
+          ratio = this.state.stats.defaultsolo.default.placetop1 / total;
+        }
       }
     } else if (this.state.mode === 'duo') {
+      if (this.state.stats.defaultduo == undefined) {
+        return 'No duo data';
+      } else {
         if (this.state.stats.defaultduo.default.placetop1 == undefined) {
-          return '0';
+          return '0 %';
         } else {
           ratio = this.state.stats.defaultduo.default.placetop1 / total;
         }
+      }
     } else {
+      if (this.state.stats.defaultsquad == undefined) {
+        return 'No squad data';
+      } else {
         if (this.state.stats.defaultsquad.default.placetop1 == undefined) {
-          return '0';
+          return '0 %';
         } else {
           ratio = this.state.stats.defaultsquad.default.placetop1 / total;
         }
+      }
     }
     ratio = ratio * 100;
-    return ratio.toFixed(3);
+    return ratio.toFixed(3) + ' %';
   }
 
   getKD() {
     var total = this.getTotalGames();
     var KD;
     if (this.state.mode === 'solo') {
-      KD = this.state.stats.defaultsolo.default.kills / total;
+      if (this.state.stats.defaultsolo == undefined) {
+        return 'No solo data';
+      } else {
+        KD = this.state.stats.defaultsolo.default.kills / total;
+      }
     } else if (this.state.mode === 'duo') {
-      KD = this.state.stats.defaultduo.default.kills / total;
+      if (this.state.stats.defaultduo == undefined) {
+        return 'No duo data';
+      } else {
+        KD = this.state.stats.defaultduo.default.kills / total;
+      }
     } else {
-      KD = this.state.stats.defaultsquad.default.kills / total;
+      if (this.state.stats.defaultsquad == undefined) {
+        return 'No squad data';
+      } else {
+        KD = this.state.stats.defaultsquad.default.kills / total;
+      }
     }
     return KD.toFixed(3);
   }
@@ -102,7 +119,6 @@ export default class StatTrackerScreen extends React.Component {
   }
 
   render() {
-
     return (
       <View style={styles.container}>
         <ImageBackground source={background} style={{ flex: 1 }}>
@@ -118,7 +134,7 @@ export default class StatTrackerScreen extends React.Component {
                 <Text style={styles.subTitleTextStyle}>Total Games Played:</Text>
                 <Text style={[styles.subTitleTextStyle, { alignSelf: 'center' }]}>{this.getTotalGames()}</Text>
                 <Text style={styles.subTitleTextStyle}>Win Rate:</Text>
-                <Text style={[styles.subTitleTextStyle, { alignSelf: 'center' }]}>{this.getWinRate()} %</Text>
+                <Text style={[styles.subTitleTextStyle, { alignSelf: 'center' }]}>{this.getWinRate()}</Text>
                 <Text style={styles.subTitleTextStyle}>Kill/Death Ratio:</Text>
                 <Text style={[styles.subTitleTextStyle, { alignSelf: 'center' }]}>{this.getKD()}</Text>
               </View>
