@@ -25,12 +25,12 @@ export default StyleSheet.create({
         margin:10,
     },
     sectionTitleTextStyle: {
-        color:'#9d4dbb',
+        color:'#ffffff',
         fontSize:20,
         fontWeight:"bold"
     },
     subTitleTextStyle: {
-        color:'#9d4dbb',
+        color:'#ffffff',
         fontSize:30,
         fontWeight:"bold"
     },
@@ -55,7 +55,7 @@ export default StyleSheet.create({
         justifyContent:'center'
     },
     homeScreenButtonText:{
-        color:'#9d4dbb', 
+        color:'#ffffff', 
         fontSize:20, 
         fontWeight:'bold', 
         textAlign:'center'
@@ -69,7 +69,7 @@ export default StyleSheet.create({
         justifyContent:'space-evenly',
         borderColor:'#9d4dbb', 
         backgroundColor:'rgba(43, 75, 149, 0.25)',
-        color:'#9d4dbb', 
+        color:'#ffffff', 
         fontSize:40, 
         fontWeight:'bold', 
         textAlign:'center'
