@@ -21,7 +21,6 @@ export default class UpcomingItemsScreen extends React.Component {
   componentDidMount() {
     this.setState({ loading: false });
   }
-  
   render() {
     return (
       <View style={styles.container}>
