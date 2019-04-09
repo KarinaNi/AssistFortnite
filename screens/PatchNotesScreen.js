@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ImageBackground, ActivityIndicator } from 'react-native';
+import { View, ImageBackground, ActivityIndicator, WebView } from 'react-native';
 import styles from '../styles';
 import background from '../assets/images/background.jpg'
 
@@ -25,12 +25,9 @@ export default class PatchNotesScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <ImageBackground source={background} style={{flex:1}}>
-
-
-
-        </ImageBackground>
-        
+        <WebView
+          source={{uri: 'https://www.epicgames.com/fortnite/en-US/news/category/patch%20notes'}}
+        />
         {this.state.loading &&
           <View style={styles.activityIndicatorStyle}>
             <ActivityIndicator size='large' color='#152D53' />
