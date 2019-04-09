@@ -1,9 +1,10 @@
 {
   "devToolsPort": 19002,
   "expoServerPort": 19000,
-  "packagerPort": null,
-  "packagerPid": null,
+  "packagerPort": 19001,
+  "packagerPid": 7844,
   "expoServerNgrokUrl": "https://44-rt7.anonymous.assistfortnite.exp.direct",
   "packagerNgrokUrl": "https://packager.44-rt7.anonymous.assistfortnite.exp.direct",
-  "ngrokPid": 22494
+  "ngrokPid": 12272,
+  "webpackServerPort": null
 }
