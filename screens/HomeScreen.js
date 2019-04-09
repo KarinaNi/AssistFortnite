@@ -233,7 +233,7 @@ export default class HomeScreen extends React.Component {
                 onPress={() => this.handleWeaponStatsPress()}
                 style={styles.homeScreenButtonStyle}>
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                  <Text style={styles.homeScreenButtonText}>WeaponStats</Text>
+                  <Text style={styles.homeScreenButtonText}>Weapon Stats</Text>
                 </View>
               </TouchableOpacity>
             </View>
