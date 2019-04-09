@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, ImageBackground, ActivityIndicator, TouchableOpacity, FlatList, Image} from 'react-native';
+import { View, ImageBackground, ActivityIndicator, Text, FlatList, Image} from 'react-native';
 import styles from '../styles';
 import { getWeapons } from '../api';
 import background from '../assets/images/background.jpg'
+import { updateExpression } from '@babel/types';
 
 export default class WeaponStatsScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
@@ -15,37 +16,60 @@ export default class WeaponStatsScreen extends React.Component {
     super(props);  
     this.state = {
       loading : true,
-      weapons: []
+      weapons: [],
     };
   }
 
   componentDidMount() {
     getWeapons().then(response => {
-      this.setState({ weapons: [...this.state.weapons,...response.weapons], loading: false })
+      var processedWeapons= [];
+      response.weapons.forEach((weapon) => {
+        var exists = false;
+        //collect weapon info
+        var name = weapon.name;
+        var image = weapon.images.image;
+        var rarity = weapon.rarity;
+        var stats = weapon.stats;
+        //if the general weapon already exists in list
+        for(var i = 0; i < processedWeapons.length; i++) {
+          if (processedWeapons[i].name == name) {
+            //get existing weapon and add a new rarity/stat object
+            exists = true;
+            var rarityStatObject = {rarity:{rarity}, stats:{stats}}
+            processedWeapons[i].stats.push(rarityStatObject)
+            break;
+          }
+        }
+        if(!exists) {
+          var newWeapon = {name:name, image:image, stats:[ {rarity:{rarity}, stats:{stats}} ]}
+          processedWeapons.push(newWeapon);
+        }
+      })
+      this.setState({ weapons: processedWeapons, loading: false }, ()=> console.log(this.state.weapons))
     })
   }
 
   render() {
-    console.log(this.state.weapons)
     return (
       <View style={styles.container}>
       <ImageBackground source={background} style={{ flex: 1 }}>
         {this.state && !this.state.loading ?
-
           <View style={{ flex: 1, margin: 10, backgroundColor: 'rgba(43, 75, 149, 0.25)', borderRadius:5,}}>
             <View style={{ flex: 1, margin: 10, flexDirection: 'column', alignItems:'flex-start'}}>
               <FlatList
-                style={{alignSelf:'center'}}
+                style={{alignSelf:'center', flex:1}}
                 data={this.state.weapons}
-                keyExtractor={(item) => item.itemid}
-                numColumns={3}
+                keyExtractor={(item) => item.name}
                 renderItem={({ item }) =>
-                  <TouchableOpacity>
+                  <View style={{flex:1}}>
+                    <View style={{borderBottomColor:'#ffffff', borderBottomWidth:3}}>
+                      <Text style={[styles.sectionTitleTextStyle,{margin:3}]}>{item.name}</Text>
+                    </View>
                     <Image
                       style={{ width: 100, height: 100, margin:5 }}
-                      source={{ uri: item.images.image }}
+                      source={{ uri: item.image }}
                     />
-                  </TouchableOpacity>
+                  </View>
                 }
               />
             </View>
