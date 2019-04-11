@@ -1,6 +1,7 @@
 'use strict';
 
 // Components used for testing
+// test comment
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import renderer from 'react-test-renderer';
