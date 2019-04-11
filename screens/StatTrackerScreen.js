@@ -25,6 +25,16 @@ export default class StatTrackerScreen extends React.Component {
 
   componentDidMount() {
     let stats = this.props.navigation.getParam('userStats', 'StatTrackerScreen: No statVal prop');
+    if(stats == 'StatTrackerScreen: No statVal prop') {
+      Alert.alert('Stat Traker Error',
+        'Stat traker error please retry.',
+        [
+          { text: 'OK', onPress: () =>  this.props.navigation.goBack() },
+        ],
+        { cancelable: false })
+      this.setState({ loading: false });
+      return;
+    }
     this.setState({ stats: stats, loading: false}, () => console.log(this.state.stats));
   }
 
@@ -234,7 +244,6 @@ export default class StatTrackerScreen extends React.Component {
 
   render() {
     return (
-
       <View style={styles.container}>
         <ImageBackground source={background} style={{ flex: 1 }}>
           {this.state && !this.state.loading ?
@@ -263,32 +272,6 @@ export default class StatTrackerScreen extends React.Component {
             </View>}
         </ImageBackground>
       </View>
-
-      // <View style={styles.container}>
-      //   <ImageBackground source={background} style={{ flex: 1 }}>
-      //     {this.state && !this.state.loading ?
-      //       <View style={{ flex: .95, borderRadius: 5, backgroundColor: 'rgba(43, 75, 149, 0.25)', margin: 15, justifyContent: 'space-evenly' }}>
-      //         <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-      //           <Text style={[styles.subTitleTextStyle, { borderBottomWidth: 2, borderColor: '#9d4dbb' }]}>{this.state.username} on {this.state.platformName}</Text>
-      //         </View>
-
-      //         <ButtonBar handleModeButtonPress={this.handleModeButtonPress.bind(this)} />
-
-      //         <View style={{ flex: .75, flexDirection: 'column', marginLeft: 10, marginTop: 25, justifyContent: 'space-evenly' }}>
-      //           <Text style={styles.subTitleTextStyle}>Total Games Played:</Text>
-      //           <Text style={[styles.subTitleTextStyle, { alignSelf: 'center' }]}>{this.getTotalGames()}</Text>
-      //           <Text style={styles.subTitleTextStyle}>Win Rate:</Text>
-      //           <Text style={[styles.subTitleTextStyle, { alignSelf: 'center' }]}>{this.getWinRate()}</Text>
-      //           <Text style={styles.subTitleTextStyle}>Kill/Death Ratio:</Text>
-      //           <Text style={[styles.subTitleTextStyle, { alignSelf: 'center' }]}>{this.getKD()}</Text>
-      //         </View>
-
-      //       </View>
-      //       : <View style={styles.activityIndicatorStyle}>
-      //         <ActivityIndicator size='large' color='#152D53' />
-      //       </View>}
-      //   </ImageBackground>
-      // </View>
     );
   }
 }
