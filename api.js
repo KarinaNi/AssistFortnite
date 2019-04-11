@@ -19,8 +19,9 @@ export async function getUserID(username) {
 }
 
 
-export function getUserStats(id) {
-    return fetch('https://fortnite-public-api.theapinetwork.com/prod09/users/public/br_stats_v2?user_id='+id)
+export function getUserStats(platform,username) {
+    return fetch('https://api.fortnitetracker.com/v1/profile/'+platform+'/'+username,
+            {headers: {'TRN-Api-Key': 'adf86c89-6413-4544-a992-4bdde12b3d02'}})
         .then((response) => {
             return response.json()})
         .catch((error) => {
