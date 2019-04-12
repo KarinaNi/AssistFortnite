@@ -122,6 +122,8 @@ exports[`homescreen tests renders correctly 1`] = `
               style={
                 Object {
                   "flex": 1,
+                  "height": 50,
+                  "width": 200,
                 }
               }
             >
@@ -136,22 +138,12 @@ exports[`homescreen tests renders correctly 1`] = `
                     Object {
                       "label": "Xbox",
                       "textColor": 4278190080,
-                      "value": "xb1",
+                      "value": "xbox",
                     },
                     Object {
                       "label": "Playstation",
                       "textColor": 4278190080,
                       "value": "ps4",
-                    },
-                    Object {
-                      "label": "Nintendo",
-                      "textColor": 4278190080,
-                      "value": "nintendo",
-                    },
-                    Object {
-                      "label": "Mobile",
-                      "textColor": 4278190080,
-                      "value": "touch",
                     },
                   ]
                 }
