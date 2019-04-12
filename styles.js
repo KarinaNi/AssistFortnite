@@ -98,4 +98,10 @@ export default StyleSheet.create({
         alignItems:'center',
         justifyContent:'center'
     },
+    weaponStatTitle: {
+        fontSize:15,
+        fontWeight:'bold',
+        color: '#ffffff',
+        margin:2
+    }
 })

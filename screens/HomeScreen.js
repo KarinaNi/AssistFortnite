@@ -1,13 +1,13 @@
 import React from 'react';
-import { Picker, TextInput, Text, TouchableOpacity, View, ImageBackground, ActivityIndicator, Alert, BackHandler } from 'react-native';
-import { getUserID, getUserStats } from '../api';
+import { Picker, TextInput, Text, TouchableOpacity, View, ImageBackground, ActivityIndicator, Alert, BackHandler, StatusBar } from 'react-native';
+import { getUserStats, getServerStatus } from '../api';
 import styles from '../styles';
 import background from '../assets/images/background.jpg'
 import { NetInfo } from 'react-native';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: 'Assistant for Fortnite',
+    header: null
   };
 
   constructor(props) {
@@ -15,9 +15,8 @@ export default class HomeScreen extends React.Component {
     this.state = {
       username: '',
       pickerPlatform: 'pc',
-      platformType: 'keyboardmouse',
-      platformName: 'PC',
       loading: false,
+      serverColor: 'black'
     };
   }
 
@@ -32,13 +31,25 @@ export default class HomeScreen extends React.Component {
           { cancelable: false })
       }
     });
+
+    getServerStatus().then(statusVal => {
+      if(statusVal.status == 'UP') {
+        this.setState({serverColor:"lawngreen"})
+      } else {
+        this.setState({serverColor:"red"})
+      }
+    })
+  }
+
+  handleUsernameTextChange(text) {
+    this.setState({ username: text })
   }
 
   handleTrackPress() {
     this.setState({ loading: true });
-    getUserID(this.state.username).then(userVal => {
-      if (userVal.username === undefined || !userVal.platforms.includes(this.state.pickerPlatform)) {
-        Alert.alert('Invalid username/platform',
+    getUserStats(this.state.pickerPlatform,this.state.username).then(statVal => {
+      if(statVal.error == 'Player Not Found') {
+        Alert.alert('Player Not Found',
           'Please enter a valid username and platform combination.',
           [
             { text: 'OK', onPress: () => console.log('OK Pressed') },
@@ -47,21 +58,10 @@ export default class HomeScreen extends React.Component {
         this.setState({ loading: false });
         return;
       }
-      getUserStats(userVal.uid).then(statVal => {
-        if (statVal.data[this.state.platformType] === undefined) {
-          Alert.alert('No stats found',
-            'No stats found for ' + userVal.username + ' on ' + this.state.platformName,
-            [
-              { text: 'OK', onPress: () => console.log('OK Pressed') },
-            ],
-            { cancelable: false })
-          this.setState({ loading: false });
-          return;
-        }
-        this.setState({ loading: false });
-        this.props.navigation.navigate("StatTrackerScreen", { username: userVal.username, userStats: statVal.data[this.state.platformType], platformName: this.state.platformName })
-      })
-    })
+      this.setState({ loading: false });
+      this.props.navigation.navigate("StatTrackerScreen", {userStats: statVal})   
+    }
+    )
   }
 
   setPlatform(platformValue) {
@@ -69,36 +69,16 @@ export default class HomeScreen extends React.Component {
       case 'pc':
         this.setState({
           pickerPlatform: 'pc',
-          platformType: 'keyboardmouse',
-          platformName: 'PC'
         });
         break;
-      case 'xb1':
+      case 'xbox':
         this.setState({
-          pickerPlatform: 'xb1',
-          platformType: 'gamepad',
-          platformName: 'Xbox'
+          pickerPlatform: 'xbox',
         });
         break;
       case 'ps4':
         this.setState({
           pickerPlatform: 'ps4',
-          platformType: 'gamepad',
-          platformName: 'Playstation'
-        });
-        break;
-      case 'nintendo':
-        this.setState({
-          pickerPlatform: 'nintendo',
-          platformType: 'gamepad',
-          platformName: 'Nintendo'
-        });
-        break;
-      case 'touch':
-        this.setState({
-          pickerPlatform: 'touch',
-          platformType: 'touch',
-          platformName: 'Mobile'
         });
         break;
     }
@@ -131,6 +111,13 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <View style={{flexDirection:'row', backgroundColor: '#152D53', justifyContent:'space-between'}}>
+          <Text style={{color:'#ffffff', fontSize:20, fontWeight:'bold', margin:18, marginTop: StatusBar.currentHeight + 18}}>Assistant for Fortnite</Text>
+          <View style={{flexDirection:'row', alignSelf: 'flex-end', padding: 3}}>
+            <Text style={{color:'#ffffff', fontSize:15, margin:3}}>Server Status: </Text>
+            <View style={{backgroundColor: this.state.serverColor, width:12, height:12, borderRadius:12, marginTop:3, marginRight:3, alignSelf:'center'}}/>
+          </View>
+        </View> 
         <ImageBackground source={background} style={{ flex: 1 }}>
           <View style={styles.homeScreenStatTrackerView}>
 
@@ -143,7 +130,7 @@ export default class HomeScreen extends React.Component {
                     style={{ paddingLeft: 10, margin: 3, flex: 1, borderRadius: 5, borderWidth: 2, color: '#ffffff', borderColor: '#9d4dbb' }}
                     placeholder='Enter Username Here'
                     placeholderTextColor='#ffffff'
-                    onChangeText={(text) => this.setState({ username: text })}
+                    onChangeText={(text) => this.handleUsernameTextChange(text)}
                     autoCapitalize='none'
                     autoCorrect={false}
                     autoComplete='off'
@@ -152,23 +139,22 @@ export default class HomeScreen extends React.Component {
                 <View style={{ flex: 1, margin: 3, borderRadius: 5, borderWidth: 2, borderColor: '#9d4dbb' }}>
                   <Picker
                     prompt='Select a platform'
-                    style={{ flex: 1 }}
+                    style={{ flex: 1, width: 200, height: 50}}
                     selectedValue={this.state.pickerPlatform}
                     onValueChange={(itemValue, itemIndex) =>
                       this.setPlatform(itemValue)
                     }>
                     <Picker.Item label="PC" value="pc" color="black" />
-                    <Picker.Item label="Xbox" value="xb1" color="black" />
+                    <Picker.Item label="Xbox" value="xbox" color="black" />
                     <Picker.Item label="Playstation" value="ps4" color="black" />
-                    <Picker.Item label="Nintendo" value="nintendo" color="black" />
-                    <Picker.Item label="Mobile" value="touch" color="black" />
                   </Picker>
                 </View>
               </View>
 
               <TouchableOpacity
                 onPress={() => this.handleTrackPress()}
-                style={{ flex: .25, margin: 10, borderRadius: 5, borderWidth: 2, borderColor: '#9d4dbb' }}>
+                style={{ flex: .25, margin: 10, borderRadius: 5, borderWidth: 2, borderColor: '#9d4dbb' }}
+                testID="track">
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                   <Text style={{ color: '#ffffff', fontSize: 15, fontWeight: "bold" }}>Track</Text>
                 </View>
@@ -233,7 +219,7 @@ export default class HomeScreen extends React.Component {
                 onPress={() => this.handleWeaponStatsPress()}
                 style={styles.homeScreenButtonStyle}>
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                  <Text style={styles.homeScreenButtonText}>WeaponStats</Text>
+                  <Text style={styles.homeScreenButtonText}>Weapon Stats</Text>
                 </View>
               </TouchableOpacity>
             </View>
