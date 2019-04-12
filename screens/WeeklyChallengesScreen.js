@@ -14,10 +14,10 @@ export default class WeeklyChallengesScreen extends React.Component {
     let dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
       weeks: dataSource.cloneWithRows([1,2,3,4,5,6,7,8,9,10]),
-      challenges: []
+      challenges: [],
+      loading:true
     };
     //get data using API
-    let challenges;
     let season = "current";
     getChallenges(season).then(challengesVal => {
       if(challengesVal === undefined) {
@@ -30,6 +30,7 @@ export default class WeeklyChallengesScreen extends React.Component {
         return;
       }      
       this.state.challenges = challengesVal;
+      this.setState({loading: false});
     })
   }
 
