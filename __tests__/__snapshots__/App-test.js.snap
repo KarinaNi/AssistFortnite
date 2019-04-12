@@ -182,6 +182,7 @@ exports[`homescreen tests renders correctly 1`] = `
               "opacity": 1,
             }
           }
+          testID="track"
         >
           <View
             style={
