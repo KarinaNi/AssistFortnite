@@ -1,13 +1,13 @@
 import React from 'react';
-import { Picker, TextInput, Text, TouchableOpacity, View, ImageBackground, ActivityIndicator, Alert, BackHandler } from 'react-native';
-import { getUserID, getUserStats } from '../api';
+import { Picker, TextInput, Text, TouchableOpacity, View, ImageBackground, ActivityIndicator, Alert, BackHandler, StatusBar } from 'react-native';
+import { getUserStats, getServerStatus } from '../api';
 import styles from '../styles';
 import background from '../assets/images/background.jpg'
 import { NetInfo } from 'react-native';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: 'Assistant for Fortnite',
+    header: null
   };
 
   constructor(props) {
@@ -16,10 +16,12 @@ export default class HomeScreen extends React.Component {
       username: '',
       pickerPlatform: 'pc',
       loading: false,
+      serverColor: 'black'
     };
   }
 
   componentDidMount() {
+    console.log(this.props)
     NetInfo.getConnectionInfo().then((connectionInfo) => {
       if (connectionInfo.type === 'none') {
         Alert.alert('No Network Connection',
@@ -30,6 +32,14 @@ export default class HomeScreen extends React.Component {
           { cancelable: false })
       }
     });
+
+    getServerStatus().then(statusVal => {
+      if(statusVal.status == 'UP') {
+        this.setState({serverColor:"lawngreen"})
+      } else {
+        this.setState({serverColor:"red"})
+      }
+    })
   }
 
   handleUsernameTextChange(text) {
@@ -103,6 +113,13 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <View style={{flexDirection:'row', backgroundColor: '#152D53', justifyContent:'space-between'}}>
+          <Text style={{color:'#ffffff', fontSize:20, fontWeight:'bold', margin:18, marginTop: StatusBar.currentHeight + 18}}>Assistant for Fortnite</Text>
+          <View style={{flexDirection:'row', alignSelf: 'flex-end', padding: 3}}>
+            <Text style={{color:'#ffffff', fontSize:15, margin:3}}>Server Status: </Text>
+            <View style={{backgroundColor: this.state.serverColor, width:12, height:12, borderRadius:12, marginTop:3, marginRight:3, alignSelf:'center'}}/>
+          </View>
+        </View> 
         <ImageBackground source={background} style={{ flex: 1 }}>
           <View style={styles.homeScreenStatTrackerView}>
 
