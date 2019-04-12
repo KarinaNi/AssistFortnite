@@ -21,7 +21,6 @@ export default class HomeScreen extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props)
     NetInfo.getConnectionInfo().then((connectionInfo) => {
       if (connectionInfo.type === 'none') {
         Alert.alert('No Network Connection',
@@ -49,7 +48,6 @@ export default class HomeScreen extends React.Component {
   handleTrackPress() {
     this.setState({ loading: true });
     getUserStats(this.state.pickerPlatform,this.state.username).then(statVal => {
-      console.log(statVal)
       if(statVal.error == 'Player Not Found') {
         Alert.alert('Player Not Found',
           'Please enter a valid username and platform combination.',

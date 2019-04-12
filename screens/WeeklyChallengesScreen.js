@@ -34,8 +34,6 @@ export default class WeeklyChallengesScreen extends React.Component {
   }
 
   handleWeekButton(rowData){
-    console.log(" current week: " + this.state.challenges.currentweek);
-    console.log("week selected: " + rowData);
     if(rowData > this.state.challenges.currentweek){
       Alert.alert("Week " + rowData + " has not happened yet.")
     }else{
