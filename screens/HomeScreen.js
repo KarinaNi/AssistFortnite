@@ -1,13 +1,13 @@
 import React from 'react';
-import { Picker, TextInput, Text, TouchableOpacity, View, ImageBackground, ActivityIndicator, Alert, BackHandler } from 'react-native';
-import { getUserID, getUserStats } from '../api';
+import { Picker, TextInput, Text, TouchableOpacity, View, ImageBackground, ActivityIndicator, Alert, BackHandler, StatusBar } from 'react-native';
+import { getUserStats, getServerStatus } from '../api';
 import styles from '../styles';
 import background from '../assets/images/background.jpg'
 import { NetInfo } from 'react-native';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: 'Assistant for Fortnite',
+    header: null
   };
 
   constructor(props) {
@@ -16,6 +16,7 @@ export default class HomeScreen extends React.Component {
       username: '',
       pickerPlatform: 'pc',
       loading: false,
+      serverColor: 'black'
     };
   }
 
@@ -30,12 +31,23 @@ export default class HomeScreen extends React.Component {
           { cancelable: false })
       }
     });
+
+    getServerStatus().then(statusVal => {
+      if(statusVal.status == 'UP') {
+        this.setState({serverColor:"lawngreen"})
+      } else {
+        this.setState({serverColor:"red"})
+      }
+    })
+  }
+
+  handleUsernameTextChange(text) {
+    this.setState({ username: text })
   }
 
   handleTrackPress() {
     this.setState({ loading: true });
     getUserStats(this.state.pickerPlatform,this.state.username).then(statVal => {
-      console.log(statVal)
       if(statVal.error == 'Player Not Found') {
         Alert.alert('Player Not Found',
           'Please enter a valid username and platform combination.',
@@ -99,6 +111,13 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <View style={{flexDirection:'row', backgroundColor: '#152D53', justifyContent:'space-between'}}>
+          <Text style={{color:'#ffffff', fontSize:20, fontWeight:'bold', margin:18, marginTop: StatusBar.currentHeight + 18}}>Assistant for Fortnite</Text>
+          <View style={{flexDirection:'row', alignSelf: 'flex-end', padding: 3}}>
+            <Text style={{color:'#ffffff', fontSize:15, margin:3}}>Server Status: </Text>
+            <View style={{backgroundColor: this.state.serverColor, width:12, height:12, borderRadius:12, marginTop:3, marginRight:3, alignSelf:'center'}}/>
+          </View>
+        </View> 
         <ImageBackground source={background} style={{ flex: 1 }}>
           <View style={styles.homeScreenStatTrackerView}>
 
@@ -111,7 +130,7 @@ export default class HomeScreen extends React.Component {
                     style={{ paddingLeft: 10, margin: 3, flex: 1, borderRadius: 5, borderWidth: 2, color: '#ffffff', borderColor: '#9d4dbb' }}
                     placeholder='Enter Username Here'
                     placeholderTextColor='#ffffff'
-                    onChangeText={(text) => this.setState({ username: text })}
+                    onChangeText={(text) => this.handleUsernameTextChange(text)}
                     autoCapitalize='none'
                     autoCorrect={false}
                     autoComplete='off'
@@ -134,7 +153,8 @@ export default class HomeScreen extends React.Component {
 
               <TouchableOpacity
                 onPress={() => this.handleTrackPress()}
-                style={{ flex: .25, margin: 10, borderRadius: 5, borderWidth: 2, borderColor: '#9d4dbb' }}>
+                style={{ flex: .25, margin: 10, borderRadius: 5, borderWidth: 2, borderColor: '#9d4dbb' }}
+                testID="track">
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                   <Text style={{ color: '#ffffff', fontSize: 15, fontWeight: "bold" }}>Track</Text>
                 </View>

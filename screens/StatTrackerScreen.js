@@ -35,7 +35,7 @@ export default class StatTrackerScreen extends React.Component {
       this.setState({ loading: false });
       return;
     }
-    this.setState({ stats: stats, loading: false}, () => console.log(this.state.stats));
+    this.setState({ stats: stats, loading: false});
   }
 
   getTotalGames() {
