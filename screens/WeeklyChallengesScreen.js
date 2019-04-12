@@ -15,7 +15,7 @@ export default class WeeklyChallengesScreen extends React.Component {
     this.state = {
       weeks: dataSource.cloneWithRows([1,2,3,4,5,6,7,8,9,10]),
       challenges: [],
-      loading:true
+  //    loading:true
     };
     //get data using API
     let season = "current";
@@ -30,7 +30,7 @@ export default class WeeklyChallengesScreen extends React.Component {
         return;
       }      
       this.state.challenges = challengesVal;
-      this.setState({loading: false});
+  //    this.setState({loading: false});
     })
   }
 
@@ -56,11 +56,8 @@ export default class WeeklyChallengesScreen extends React.Component {
           />
         </ImageBackground>
         
-        {this.state.loading &&
-          <View style={styles.activityIndicatorStyle}>
-            <ActivityIndicator size='large' color='#152D53' />
-          </View>
-        }
+
+        
       </View>
     )
   }
