@@ -34,6 +34,10 @@ export default class HomeScreen extends React.Component {
     });
   }
 
+  handleUsernameTextChange(text) {
+    this.setState({ username: text })
+  }
+
   handleTrackPress() {
     this.setState({ loading: true });
     getUserID(this.state.username).then(userVal => {
@@ -143,7 +147,7 @@ export default class HomeScreen extends React.Component {
                     style={{ paddingLeft: 10, margin: 3, flex: 1, borderRadius: 5, borderWidth: 2, color: '#ffffff', borderColor: '#9d4dbb' }}
                     placeholder='Enter Username Here'
                     placeholderTextColor='#ffffff'
-                    onChangeText={(text) => this.setState({ username: text })}
+                    onChangeText={(text) => this.handleUsernameTextChange(text)}
                     autoCapitalize='none'
                     autoCorrect={false}
                     autoComplete='off'
@@ -168,7 +172,8 @@ export default class HomeScreen extends React.Component {
 
               <TouchableOpacity
                 onPress={() => this.handleTrackPress()}
-                style={{ flex: .25, margin: 10, borderRadius: 5, borderWidth: 2, borderColor: '#9d4dbb' }}>
+                style={{ flex: .25, margin: 10, borderRadius: 5, borderWidth: 2, borderColor: '#9d4dbb' }}
+                testID="track">
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                   <Text style={{ color: '#ffffff', fontSize: 15, fontWeight: "bold" }}>Track</Text>
                 </View>
