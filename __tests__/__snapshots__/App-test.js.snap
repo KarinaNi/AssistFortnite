@@ -10,6 +10,63 @@ exports[`homescreen tests renders correctly 1`] = `
   }
 >
   <View
+    style={
+      Object {
+        "backgroundColor": "#152D53",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#ffffff",
+          "fontSize": 20,
+          "fontWeight": "bold",
+          "margin": 18,
+          "marginTop": 60,
+        }
+      }
+    >
+      Assistant for Fortnite
+    </Text>
+    <View
+      style={
+        Object {
+          "alignSelf": "flex-end",
+          "flexDirection": "row",
+          "padding": 3,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#ffffff",
+            "fontSize": 15,
+            "margin": 3,
+          }
+        }
+      >
+        Server Status: 
+      </Text>
+      <View
+        style={
+          Object {
+            "alignSelf": "center",
+            "backgroundColor": "black",
+            "borderRadius": 12,
+            "height": 12,
+            "marginRight": 3,
+            "marginTop": 3,
+            "width": 12,
+          }
+        }
+      />
+    </View>
+  </View>
+  <View
     accessibilityIgnoresInvertColors={true}
     style={
       Object {
