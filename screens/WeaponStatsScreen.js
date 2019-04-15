@@ -45,7 +45,7 @@ export default class WeaponStatsScreen extends React.Component {
           processedWeapons.push(newWeapon);
         }
       })
-      this.setState({ weapons: processedWeapons, loading: false }, ()=> console.log(this.state.weapons))
+      this.setState({ weapons: processedWeapons, loading: false })
     })
   }
 
@@ -97,6 +97,7 @@ export default class WeaponStatsScreen extends React.Component {
                     <FlatList
                       style={{alignSelf:'center', flex:1}}
                       data={item.stats}
+                      keyExtractor={(item) => item.rarity}
                       horizontal={true}
                       renderItem={({ item }) =>
                         <View style={{backgroundColor: this.rarityColor(item.rarity), margin:5, padding:3, borderRadius:5}}>

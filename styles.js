@@ -6,7 +6,7 @@ export default StyleSheet.create({
         backgroundColor: '#1F1F1F'
     },
     homeScreenStatTrackerView: {
-        flex:.3,
+        flex:.4,
         margin:15,
         flexDirection:'column',
         borderRadius:5,
@@ -46,7 +46,7 @@ export default StyleSheet.create({
     },
     homeScreenButtonStyle: {
         flex:1,
-        margin:15,
+        margin:10,
         borderRadius:5, 
         borderWidth:2, 
         borderColor:'#9d4dbb', 

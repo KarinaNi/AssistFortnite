@@ -33,10 +33,10 @@ export default class HomeScreen extends React.Component {
     });
 
     getServerStatus().then(statusVal => {
-      if(statusVal.status == 'UP') {
-        this.setState({serverColor:"lawngreen"})
+      if (statusVal.status == 'UP') {
+        this.setState({ serverColor: "lawngreen" })
       } else {
-        this.setState({serverColor:"red"})
+        this.setState({ serverColor: "red" })
       }
     })
   }
@@ -47,8 +47,8 @@ export default class HomeScreen extends React.Component {
 
   handleTrackPress() {
     this.setState({ loading: true });
-    getUserStats(this.state.pickerPlatform,this.state.username).then(statVal => {
-      if(statVal.error == 'Player Not Found') {
+    getUserStats(this.state.pickerPlatform, this.state.username).then(statVal => {
+      if (statVal.error == 'Player Not Found') {
         Alert.alert('Player Not Found',
           'Please enter a valid username and platform combination.',
           [
@@ -59,7 +59,7 @@ export default class HomeScreen extends React.Component {
         return;
       }
       this.setState({ loading: false });
-      this.props.navigation.navigate("StatTrackerScreen", {userStats: statVal})   
+      this.props.navigation.navigate("StatTrackerScreen", { userStats: statVal })
     }
     )
   }
@@ -96,31 +96,31 @@ export default class HomeScreen extends React.Component {
     this.props.navigation.navigate("ItemShopScreen");
   }
 
-  handlePatchNotesPress(){
+  handlePatchNotesPress() {
     this.props.navigation.navigate("PatchNotesScreen");
   }
 
-  handleUpcomingItemsPress(){
+  handleUpcomingItemsPress() {
     this.props.navigation.navigate("UpcomingItemsScreen");
   }
 
-  handleWeaponStatsPress(){
+  handleWeaponStatsPress() {
     this.props.navigation.navigate("WeaponStatsScreen");
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <View style={{flexDirection:'row', backgroundColor: '#152D53', justifyContent:'space-between'}}>
-          <Text style={{color:'#ffffff', fontSize:20, fontWeight:'bold', margin:18, marginTop: StatusBar.currentHeight + 18}}>Assistant for Fortnite</Text>
-          <View style={{flexDirection:'row', alignSelf: 'flex-end', padding: 3}}>
-            <Text style={{color:'#ffffff', fontSize:15, margin:3}}>Server Status: </Text>
-            <View style={{backgroundColor: this.state.serverColor, width:12, height:12, borderRadius:12, marginTop:3, marginRight:3, alignSelf:'center'}}/>
+        <View style={{ flexDirection: 'row', backgroundColor: '#152D53', justifyContent: 'space-between' }}>
+          <Text style={{ color: '#ffffff', fontSize: 20, fontWeight: 'bold', margin: 18, marginTop: StatusBar.currentHeight + 18 }}>Assistant for Fortnite</Text>
+          <View style={{ flexDirection: 'row', alignSelf: 'flex-end', padding: 3 }}>
+            <Text style={{ color: '#ffffff', fontSize: 15, margin: 3 }}>Server Status: </Text>
+            <View style={{ backgroundColor: this.state.serverColor, width: 12, height: 12, borderRadius: 12, marginTop: 3, marginRight: 3, alignSelf: 'center' }} />
           </View>
-        </View> 
+        </View>
         <ImageBackground source={background} style={{ flex: 1 }}>
-          <View style={styles.homeScreenStatTrackerView}>
 
+          <View style={styles.homeScreenStatTrackerView}>
             <Text style={styles.sectionTitleTextStyle}>Stat Tracker</Text>
             <View style={styles.homeScreenStatTrackerInputView}>
 
@@ -136,10 +136,11 @@ export default class HomeScreen extends React.Component {
                     autoComplete='off'
                   />
                 </View>
+
                 <View style={{ flex: 1, margin: 3, borderRadius: 5, borderWidth: 2, borderColor: '#9d4dbb' }}>
                   <Picker
                     prompt='Select a platform'
-                    style={{ flex: 1, width: 200, height: 50}}
+                    style={{ flex: 1, width: 200, height: 50 }}
                     selectedValue={this.state.pickerPlatform}
                     onValueChange={(itemValue, itemIndex) =>
                       this.setPlatform(itemValue)
@@ -160,29 +161,59 @@ export default class HomeScreen extends React.Component {
                 </View>
               </TouchableOpacity>
             </View>
-
           </View>
 
-          <View style={{ flex: .3, flexDirection: 'row', justifyContent: 'space-evenly' }}>
-            <TouchableOpacity
-              onPress={() => this.handleWeeklyChallengesPress()}
-              style={styles.homeScreenButtonStyle}>
-              <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text style={styles.homeScreenButtonText}>Weekly Challenges</Text>
-              </View>
-            </TouchableOpacity>
 
-            <TouchableOpacity
-              onPress={() => this.handleRandGenPress()}
-              style={styles.homeScreenButtonStyle}>
-              <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text style={styles.homeScreenButtonText}>Random Drop</Text>
-              </View>
-            </TouchableOpacity>
-          </View>
-          
+
           <View style={{ flex: .3, flexDirection: 'row', justifyContent: 'space-evenly' }}>
-            <View style={{flex:1}}>
+            <View style={{ flex: 1 }}>
+              <TouchableOpacity
+                onPress={() => this.handleWeeklyChallengesPress()}
+                style={styles.homeScreenButtonStyle}>
+                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                  <Text style={styles.homeScreenButtonText}>Weekly Challenges</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+
+            <View style={{ flex: 1 }}>
+              <TouchableOpacity
+                onPress={() => this.handleChallengeGuidesPress()}
+                style={styles.homeScreenButtonStyle}>
+                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                  <Text style={styles.homeScreenButtonText}>Challenge Guides</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+
+          <View style={{ flex: .3, flexDirection: 'row', justifyContent: 'space-evenly' }}>
+            <View style={{ flex: 1 }}>
+              <TouchableOpacity
+                onPress={() => this.handleWeaponStatsPress()}
+                style={styles.homeScreenButtonStyle}>
+                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                  <Text style={styles.homeScreenButtonText}>Weapons Stats</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+
+
+            <View style={{ flex: 1 }}>
+              <TouchableOpacity
+                onPress={() => this.handleRandGenPress()}
+                style={styles.homeScreenButtonStyle}>
+                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                  <Text style={styles.homeScreenButtonText}>Random Drop</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+
+          <View style={{ flex: .3, flexDirection: 'row', justifyContent: 'space-evenly' }}>
+            <View style={{ flex: 1 }}>
               <TouchableOpacity
                 onPress={() => this.handleUpcomingItemsPress()}
                 style={styles.homeScreenButtonStyle}>
@@ -192,7 +223,7 @@ export default class HomeScreen extends React.Component {
               </TouchableOpacity>
             </View>
 
-            <View style={{flex:1}}>
+            <View style={{ flex: 1 }}>
               <TouchableOpacity
                 onPress={() => this.handleItemShopPress()}
                 style={styles.homeScreenButtonStyle}>
@@ -203,8 +234,9 @@ export default class HomeScreen extends React.Component {
             </View>
           </View>
 
+
           <View style={{ flex: .3, flexDirection: 'row', justifyContent: 'space-evenly' }}>
-            <View style={{flex:1}}>
+            <View style={{ flex: 1 }}>
               <TouchableOpacity
                 onPress={() => this.handlePatchNotesPress()}
                 style={styles.homeScreenButtonStyle}>
@@ -214,16 +246,18 @@ export default class HomeScreen extends React.Component {
               </TouchableOpacity>
             </View>
 
-            <View style={{flex:1}}>
+
+            <View style={{ flex: 1 }}>
               <TouchableOpacity
-                onPress={() => this.handleWeaponStatsPress()}
+                onPress={() => this.handleControlsPress()}
                 style={styles.homeScreenButtonStyle}>
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                  <Text style={styles.homeScreenButtonText}>Weapon Stats</Text>
+                  <Text style={styles.homeScreenButtonText}>Controls</Text>
                 </View>
               </TouchableOpacity>
             </View>
           </View>
+
 
         </ImageBackground>
 
