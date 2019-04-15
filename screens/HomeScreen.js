@@ -107,6 +107,12 @@ export default class HomeScreen extends React.Component {
   handleWeaponStatsPress() {
     this.props.navigation.navigate("WeaponStatsScreen");
   }
+  handleChallengeGuidesPress() {
+    this.props.navigation.navigate("ChallengeGuideScreen");
+  }
+  handleControlsPress() {
+    this.props.navigation.navigate("ControlsScreen");
+  }
 
   render() {
     return (
