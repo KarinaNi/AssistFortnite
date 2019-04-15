@@ -7,7 +7,7 @@ export default StyleSheet.create({
     },
     homeScreenStatTrackerView: {
         flex:.4,
-        margin:15,
+        margin:10,
         flexDirection:'column',
         borderRadius:5,
         backgroundColor: 'rgba(43, 75, 149, 0.25)',
