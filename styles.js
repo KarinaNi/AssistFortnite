@@ -103,5 +103,29 @@ export default StyleSheet.create({
         fontWeight:'bold',
         color: '#ffffff',
         margin:2
+    },
+    controlScreenInputView: {
+        flex: 1,
+        justifyContent: 'space-between',
+        margin: 10,
+        borderRadius: 5,  
+        backgroundColor:'rgba(43, 75, 149, 0.25)',
+    },
+    controlScreenImageView: {
+        flex: 2,
+        alignItems:'center',
+        margin: 10,
+    },
+    controlScreenPickerBar: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin :10,
+        borderRadius: 5, borderWidth: 2, borderColor: '#9d4dbb' ,
+    },
+    controlImage: {
+        flex: 1,
+        width: '95%'
     }
+
 })

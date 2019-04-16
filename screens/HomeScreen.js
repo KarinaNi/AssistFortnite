@@ -146,7 +146,7 @@ export default class HomeScreen extends React.Component {
                 <View style={{ flex: 1, margin: 3, borderRadius: 5, borderWidth: 2, borderColor: '#9d4dbb' }}>
                   <Picker
                     prompt='Select a platform'
-                    style={{ flex: 1, width: 200, height: 50 }}
+                    style={{ flex: 1, width: 200, height: 50 , borderRadius: 5, borderWidth: 2, borderColor: '#9d4dbb' ,}}
                     selectedValue={this.state.pickerPlatform}
                     onValueChange={(itemValue, itemIndex) =>
                       this.setPlatform(itemValue)
