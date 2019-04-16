@@ -47,6 +47,16 @@ export default class HomeScreen extends React.Component {
 
   handleTrackPress() {
     this.setState({ loading: true });
+    if (this.state.username == '') {
+      Alert.alert('Please Enter Username',
+        'Please enter a valid username and platform combination.',
+        [
+          { text: 'OK', onPress: () => console.log('OK Pressed') },
+        ],
+        { cancelable: false })
+      this.setState({ loading: false });
+      return;
+    }
     getUserStats(this.state.pickerPlatform, this.state.username).then(statVal => {
       if (statVal.error == 'Player Not Found') {
         Alert.alert('Player Not Found',
