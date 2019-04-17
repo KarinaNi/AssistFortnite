@@ -8,6 +8,8 @@ import UpcomingItemsScreen from '../screens/UpcomingItemsScreen';
 import WeaponStatsScreen from '../screens/WeaponStatsScreen';
 import WeeklyChallengesScreen from '../screens/WeeklyChallengesScreen';
 import WeekScreen from '../screens/WeekScreen';
+import ChallengeGuideScreen from '../screens/ChallengeGuideScreen';
+import ControlsScreen from '../screens/ControlsScreen';
 
 
 const MainNavigator = createStackNavigator(
@@ -20,7 +22,9 @@ const MainNavigator = createStackNavigator(
         UpcomingItemsScreen: UpcomingItemsScreen,
         WeaponStatsScreen: WeaponStatsScreen,
         WeeklyChallengesScreen: WeeklyChallengesScreen,
-        WeekScreen: WeekScreen
+        WeekScreen: WeekScreen,
+        ChallengeGuideScreen: ChallengeGuideScreen,
+        ControlsScreen: ControlsScreen
     },
     {
         initialRouteName: 'Home',

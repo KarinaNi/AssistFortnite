@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1555107128577" clover="3.2.0">
-  <project timestamp="1555107128577" name="All files">
-    <metrics statements="246" coveredstatements="173" conditionals="129" coveredconditionals="96" methods="94" coveredmethods="56" elements="469" coveredelements="325" complexity="0" loc="246" ncloc="246" packages="5" files="11" classes="11"/>
+<coverage generated="1555475431001" clover="3.2.0">
+  <project timestamp="1555475431001" name="All files">
+    <metrics statements="255" coveredstatements="178" conditionals="133" coveredconditionals="98" methods="99" coveredmethods="60" elements="487" coveredelements="336" complexity="0" loc="255" ncloc="255" packages="5" files="11" classes="11"/>
     <package name="AssistFortnite">
       <metrics statements="18" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="18" coveredmethods="0"/>
       <file name="api.js" path="/Users/connorblazek/Documents/GitHub/AssistFortnite/api.js">
@@ -78,9 +78,9 @@
       </file>
     </package>
     <package name="AssistFortnite.screens">
-      <metrics statements="198" coveredstatements="153" conditionals="117" coveredconditionals="87" methods="63" coveredmethods="52"/>
-      <file name="HomeScreen.js" path="/Users/connorblazek/Documents/GitHub/AssistFortnite/screens/HomeScreen.js">
-        <metrics statements="43" coveredstatements="35" conditionals="11" coveredconditionals="7" methods="26" coveredmethods="23"/>
+      <metrics statements="207" coveredstatements="158" conditionals="121" coveredconditionals="89" methods="68" coveredmethods="56"/>
+      <file name="HomeScreen.js" path="C:\Users\ahmad\Desktop\React\AssistFortnite\screens\HomeScreen.js">
+        <metrics statements="52" coveredstatements="40" conditionals="13" coveredconditionals="8" methods="31" coveredmethods="27"/>
         <line num="14" count="2" type="stmt"/>
         <line num="15" count="2" type="stmt"/>
         <line num="24" count="2" type="stmt"/>
@@ -93,37 +93,46 @@
         <line num="39" count="0" type="stmt"/>
         <line num="45" count="1" type="stmt"/>
         <line num="49" count="1" type="stmt"/>
-        <line num="50" count="1" type="stmt"/>
-        <line num="51" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="52" count="0" type="stmt"/>
-        <line num="55" count="0" type="stmt"/>
+        <line num="50" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
         <line num="58" count="0" type="stmt"/>
-        <line num="59" count="0" type="stmt"/>
-        <line num="61" count="1" type="stmt"/>
-        <line num="62" count="1" type="stmt"/>
-        <line num="68" count="3" type="cond" truecount="3" falsecount="0"/>
-        <line num="70" count="1" type="stmt"/>
-        <line num="73" count="1" type="stmt"/>
-        <line num="75" count="1" type="stmt"/>
-        <line num="78" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
+        <line num="61" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="71" count="1" type="stmt"/>
+        <line num="72" count="1" type="stmt"/>
+        <line num="78" count="3" type="cond" truecount="3" falsecount="0"/>
         <line num="80" count="1" type="stmt"/>
         <line num="83" count="1" type="stmt"/>
+        <line num="85" count="1" type="stmt"/>
         <line num="88" count="1" type="stmt"/>
-        <line num="92" count="1" type="stmt"/>
-        <line num="96" count="1" type="stmt"/>
-        <line num="100" count="1" type="stmt"/>
-        <line num="104" count="1" type="stmt"/>
-        <line num="108" count="1" type="stmt"/>
-        <line num="112" count="10" type="stmt"/>
-        <line num="133" count="1" type="stmt"/>
-        <line num="145" count="0" type="stmt"/>
-        <line num="155" count="1" type="stmt"/>
-        <line num="168" count="1" type="stmt"/>
-        <line num="176" count="1" type="stmt"/>
+        <line num="90" count="1" type="stmt"/>
+        <line num="93" count="1" type="stmt"/>
+        <line num="98" count="1" type="stmt"/>
+        <line num="102" count="1" type="stmt"/>
+        <line num="106" count="1" type="stmt"/>
+        <line num="110" count="1" type="stmt"/>
+        <line num="114" count="1" type="stmt"/>
+        <line num="118" count="1" type="stmt"/>
+        <line num="121" count="1" type="stmt"/>
+        <line num="124" count="1" type="stmt"/>
+        <line num="128" count="10" type="stmt"/>
+        <line num="149" count="1" type="stmt"/>
+        <line num="162" count="0" type="stmt"/>
+        <line num="172" count="1" type="stmt"/>
         <line num="187" count="1" type="stmt"/>
         <line num="197" count="1" type="stmt"/>
-        <line num="209" count="1" type="stmt"/>
-        <line num="219" count="1" type="stmt"/>
+        <line num="210" count="1" type="stmt"/>
+        <line num="221" count="1" type="stmt"/>
+        <line num="234" count="1" type="stmt"/>
+        <line num="244" count="1" type="stmt"/>
+        <line num="257" count="1" type="stmt"/>
+        <line num="268" count="1" type="stmt"/>
       </file>
       <file name="ItemShopScreen.js" path="/Users/connorblazek/Documents/GitHub/AssistFortnite/screens/ItemShopScreen.js">
         <metrics statements="16" coveredstatements="14" conditionals="6" coveredconditionals="6" methods="10" coveredmethods="8"/>
