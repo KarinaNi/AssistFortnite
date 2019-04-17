@@ -21,7 +21,7 @@ Where it can be run on your own Android device or the provided in-browser emulat
 ## To Test:
 
 1. Clone/download repo
-2. In package.json ensure the devDependencies are using the most updated verions
+2. In package.json ensure the devDependencies are using the most updated version
 3. In the project folder run `npm install` 
 4. In the project folder run `npm test`
 
