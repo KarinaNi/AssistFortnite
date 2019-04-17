@@ -4,7 +4,6 @@ import styles from '../styles';
 import { getDailyStore } from '../api';
 import background from '../assets/images/background.jpg'
 
-
 export default class ItemShopScreen extends React.Component {
 
   static navigationOptions = {
