@@ -1,5 +1,5 @@
-# Assistant for Fortnite App
-
+# Assistant for Fortnite App [![Build Status](https://travis-ci.com/KarinaNi/AssistFortnite.svg?branch=master)](https://travis-ci.com/KarinaNi/AssistFortnite)
+ 
 
 ## Build Requirements:
 - Android emulator/device
