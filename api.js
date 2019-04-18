@@ -1,4 +1,4 @@
-import firebase from './firebase'
+import firebase from './fire'
 const db = firebase.firestore()
 
 export function getDailyStore() {
@@ -39,12 +39,12 @@ export function getUpcomingItems() {
 }
 
 export function getWeapons() {
-    return fetch('https://fortnite-public-api.theapinetwork.com/prod09/weapons/get')
-        .then((response) => {
-            return response.json()})
-        .catch((error) => {
-        console.error(error);
-        });
+    var docRef = db.collection("fortnite").doc("weapons");
+     return docRef.get().then((doc) => {
+        return doc.data()
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
 }
 
 export function getServerStatus() {
