@@ -1,5 +1,5 @@
 TN:
-SF:C:\Users\ahmad\Desktop\React\AssistFortnite\api.js
+SF:/Users/connorblazek/Documents/GitHub/AssistFortnite/api.js
 FN:3,getDailyStore
 FN:5,(anonymous_1)
 FN:7,(anonymous_2)
@@ -62,7 +62,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:\Users\ahmad\Desktop\React\AssistFortnite\styles.js
+SF:/Users/connorblazek/Documents/GitHub/AssistFortnite/styles.js
 FNF:0
 FNH:0
 LF:0
@@ -71,7 +71,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:\Users\ahmad\Desktop\React\AssistFortnite\assets\__mockAPI.js
+SF:/Users/connorblazek/Documents/GitHub/AssistFortnite/assets/__mockAPI.js
 FNF:0
 FNH:0
 DA:1,1
@@ -85,7 +85,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\background.jpg
+SF:/Users/connorblazek/Documents/GitHub/AssistFortnite/assets/images/background.jpg
 FNF:0
 FNH:0
 DA:1,1
@@ -95,7 +95,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:\Users\ahmad\Desktop\React\AssistFortnite\components\ButtonBar.js
+SF:/Users/connorblazek/Documents/GitHub/AssistFortnite/components/ButtonBar.js
 FN:7,(anonymous_0)
 FN:15,(anonymous_1)
 FN:16,(anonymous_2)
@@ -166,7 +166,7 @@ BRF:12
 BRH:9
 end_of_record
 TN:
-SF:C:\Users\ahmad\Desktop\React\AssistFortnite\screens\HomeScreen.js
+SF:/Users/connorblazek/Documents/GitHub/AssistFortnite/screens/HomeScreen.js
 FN:13,(anonymous_0)
 FN:23,(anonymous_1)
 FN:24,(anonymous_2)
@@ -302,7 +302,7 @@ BRF:13
 BRH:8
 end_of_record
 TN:
-SF:C:\Users\ahmad\Desktop\React\AssistFortnite\screens\ItemShopScreen.js
+SF:/Users/connorblazek/Documents/GitHub/AssistFortnite/screens/ItemShopScreen.js
 FN:14,(anonymous_0)
 FN:23,(anonymous_1)
 FN:24,(anonymous_2)
@@ -353,7 +353,7 @@ BRF:6
 BRH:6
 end_of_record
 TN:
-SF:C:\Users\ahmad\Desktop\React\AssistFortnite\screens\RandomDropGeneratorScreen.js
+SF:/Users/connorblazek/Documents/GitHub/AssistFortnite/screens/RandomDropGeneratorScreen.js
 FN:11,(anonymous_0)
 FN:19,(anonymous_1)
 FN:60,(anonymous_2)
@@ -379,7 +379,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:C:\Users\ahmad\Desktop\React\AssistFortnite\screens\StatTrackerScreen.js
+SF:/Users/connorblazek/Documents/GitHub/AssistFortnite/screens/StatTrackerScreen.js
 FN:14,(anonymous_0)
 FN:26,(anonymous_1)
 FN:32,(anonymous_2)
@@ -606,7 +606,7 @@ BRF:94
 BRH:69
 end_of_record
 TN:
-SF:C:\Users\ahmad\Desktop\React\AssistFortnite\screens\WeekScreen.js
+SF:/Users/connorblazek/Documents/GitHub/AssistFortnite/screens/WeekScreen.js
 FN:7,(anonymous_0)
 FN:13,(anonymous_1)
 FN:21,(anonymous_2)
@@ -640,7 +640,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:C:\Users\ahmad\Desktop\React\AssistFortnite\screens\WeeklyChallengesScreen.js
+SF:/Users/connorblazek/Documents/GitHub/AssistFortnite/screens/WeeklyChallengesScreen.js
 FN:12,(anonymous_0)
 FN:14,(anonymous_1)
 FN:22,(anonymous_2)
