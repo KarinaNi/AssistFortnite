@@ -287,7 +287,7 @@
         <line num="41" count="10" type="stmt"/>
       </file>
       <file name="WeeklyChallengesScreen.js" path="/Users/connorblazek/Documents/GitHub/AssistFortnite/screens/WeeklyChallengesScreen.js">
-        <metrics statements="15" coveredstatements="11" conditionals="6" coveredconditionals="4" methods="7" coveredmethods="4"/>
+        <metrics statements="15" coveredstatements="11" conditionals="4" coveredconditionals="3" methods="7" coveredmethods="4"/>
         <line num="13" count="2" type="stmt"/>
         <line num="14" count="2" type="stmt"/>
         <line num="15" count="2" type="stmt"/>
@@ -298,11 +298,11 @@
         <line num="27" count="0" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
         <line num="32" count="2" type="stmt"/>
-        <line num="37" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="38" count="1" type="stmt"/>
-        <line num="40" count="1" type="stmt"/>
-        <line num="45" count="2" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
+        <line num="38" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="46" count="2" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
       </file>
     </package>
   </project>
