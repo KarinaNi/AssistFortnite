@@ -32,7 +32,10 @@ exports.onStoreUpdate = functions.firestore
         var before = change.before.data()
         var after = change.after.data()
 
-        if (_.isEqual(before, after)) {
-            console.log('do somthing')
-        }        
+        if (!_.isEqual(before, after)) {
+            // Here is where you'd send the Push notif
+            console.log('Detected change')
+        }
+        // Don't worry about this, this is to prevent an Unhandled promise rejection
+        return change.after.ref.get();
     })
