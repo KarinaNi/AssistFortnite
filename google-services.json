@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1079582520882",
+    "firebase_url": "https://assistant-for-fortnite.firebaseio.com",
+    "project_id": "assistant-for-fortnite",
+    "storage_bucket": "assistant-for-fortnite.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1079582520882:android:0fa3b37bc5e1e8cf",
+        "android_client_info": {
+          "package_name": "com.cs560.AssistantForFortnite"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1079582520882-sp7lcbp5j2hd2tmerp311mq6h1rigj16.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxKDlYAFP0At5Nm5q6G8lmE_HmEfb9hv8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1079582520882-sp7lcbp5j2hd2tmerp311mq6h1rigj16.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
