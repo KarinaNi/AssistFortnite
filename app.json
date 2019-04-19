@@ -19,6 +19,9 @@
     "ios": {
       "supportsTablet": true
     },
+    "android": {
+      "package": "com.cs560.AssistantForFortnite"
+    },
     "description": "",
     "githubUrl": "https://github.com/KarinaNi/AssistFortnite"
   }
