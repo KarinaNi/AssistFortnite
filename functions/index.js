@@ -1,10 +1,8 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin')
 const fetch = require('node-fetch')
-const _ = require('lodash')
 
 admin.initializeApp()
-
 
 // Updated daily at 7:01 PM using cron-job
 exports.updateDailyStore = functions.https.onRequest((req, res) => {
@@ -29,13 +27,41 @@ exports.updateWeaponStats = functions.https.onRequest((req, res) => {
 // Send push notif on update in data
 exports.onStoreUpdate = functions.firestore
     .document('fortnite/dailyStore').onWrite((change, context) => {
-        var before = change.before.data()
-        var after = change.after.data()
 
-        if (!_.isEqual(before, after)) {
-            // Here is where you'd send the Push notif
-            console.log('Detected change')
-        }
+        const { Expo } = require('expo-server-sdk')
+        let expo = new Expo()
+
+        let messages = []
+        return admin.firestore().collection('fortnite').doc('users').get()
+        .then((doc) => {
+            for (const key in doc.data()) {
+                let pushToken = doc.data()[key]
+                if (!Expo.isExpoPushToken(pushToken)) {
+                    console.error(`Push token ${pushToken} is not a valid Expo push token`);
+                    continue;
+                }
+                messages.push({
+                    to: pushToken,
+                    title: 'Item Shop Updated!',
+                    sound: 'default',
+                    body: 'Come check out the freshly updated Item Shop!',
+                })
+            }
+            let chunks = expo.chunkPushNotifications(messages);
+            let tickets = [];
+            async function pushToExpo() {
+                for (let chunk of chunks) {
+                    try {
+                        let ticketChunk = await expo.sendPushNotificationsAsync(chunk);
+                        console.log(ticketChunk);
+                        tickets.push(...ticketChunk);
+                    } catch (error) {
+                    console.error(error);
+                    }
+                }
+            }
+            return pushToExpo()
+        })
         // Don't worry about this, this is to prevent an Unhandled promise rejection
-        return change.after.ref.get();
+        // return change.before.ref.get()
     })

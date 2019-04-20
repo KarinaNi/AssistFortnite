@@ -1,16 +1,16 @@
-require('dotenv').config()
 const firebase = require("firebase");
 // Required for side-effects
 require("firebase/firestore");
 
+import * as config from './FirebaseConfig'
 // You'll have to fill in the API credentials from your project
 const firebaseConfig = {
-  apiKey: process.env.API_KEY,
-  authDomain: process.env.AUTH_DOMAIN,
-  databaseURL: process.env.DB_URL,
-  projectId: process.env.PROJECT_ID,
-  storageBucket: process.env.STORAGE_BUCKET,
-  messagingSenderId: process.env.MESSAGING_SENDER_ID
+  apiKey: config.API_KEY,
+  authDomain: config.AUTH_DOMAIN,
+  databaseURL: config.DB_URL,
+  projectId: config.PROJECT_ID,
+  storageBucket: config.STORAGE_BUCKET,
+  messagingSenderId: config.MESSAGING_SENDER_ID
 };
 
 firebase.initializeApp(firebaseConfig);
