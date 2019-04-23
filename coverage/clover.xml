@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1555475431001" clover="3.2.0">
-  <project timestamp="1555475431001" name="All files">
+<coverage generated="1555537599431" clover="3.2.0">
+  <project timestamp="1555537599432" name="All files">
     <metrics statements="255" coveredstatements="178" conditionals="133" coveredconditionals="98" methods="99" coveredmethods="60" elements="487" coveredelements="336" complexity="0" loc="255" ncloc="255" packages="5" files="11" classes="11"/>
     <package name="AssistFortnite">
       <metrics statements="18" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="18" coveredmethods="0"/>
@@ -79,7 +79,7 @@
     </package>
     <package name="AssistFortnite.screens">
       <metrics statements="207" coveredstatements="158" conditionals="121" coveredconditionals="89" methods="68" coveredmethods="56"/>
-      <file name="HomeScreen.js" path="C:\Users\ahmad\Desktop\React\AssistFortnite\screens\HomeScreen.js">
+      <file name="HomeScreen.js" path="/Users/connorblazek/Documents/GitHub/AssistFortnite/screens/HomeScreen.js">
         <metrics statements="52" coveredstatements="40" conditionals="13" coveredconditionals="8" methods="31" coveredmethods="27"/>
         <line num="14" count="2" type="stmt"/>
         <line num="15" count="2" type="stmt"/>

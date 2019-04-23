@@ -11,8 +11,8 @@ export default class RandomDropGeneratorScreen extends React.Component {
   constructor(){
       super();
       this.state={
-        PlaceHolder : '',
-        StratHolder : ''
+        PlaceHolder : ' ',
+        StratHolder : ' '
       }
   }
   
@@ -64,21 +64,21 @@ export default class RandomDropGeneratorScreen extends React.Component {
 
         <View style={{flex:1, flexDirection:'column', justifyContent:'space-evenly'}}>
 
-          <View style={styles.homeScreenStatTrackerView}>
-            <Text style={{color:'#ffffff', fontSize: 25, fontWeight:"bold"}}>
-              {'Strategy'}
-            </Text>
-            <Text style={{color:'#ffffff', fontSize: 40, fontWeight:"bold", marginBottom: 5}}>
-              {this.state.StratHolder}
-            </Text>
-          </View>
-          
-          <View style={styles.homeScreenStatTrackerView}>
+        <View style={{flex:.4, margin:10, flexDirection:'column', borderRadius:5, backgroundColor: 'rgba(43, 75, 149, 0.25)', justifyContent:'space-evenly', alignItems: 'center'}}>
             <Text style={{color:'#ffffff', fontSize: 25, fontWeight:"bold"}}>
               {'Drop Location'}
             </Text>
             <Text style={{color:'#ffffff', fontSize: 40, fontWeight:"bold", marginBottom: 5}}>
               {this.state.PlaceHolder}
+            </Text>
+          </View>
+
+          <View style={{flex:.4, margin:10, flexDirection:'column', borderRadius:5, backgroundColor: 'rgba(43, 75, 149, 0.25)', justifyContent:'space-evenly', alignItems: 'center'}}>
+            <Text style={{color:'#ffffff', fontSize: 25, fontWeight:"bold"}}>
+              {'Strategy'}
+            </Text>
+            <Text style={{color:'#ffffff', fontSize: 40, fontWeight:"bold", marginBottom: 5}}>
+              {this.state.StratHolder}
             </Text>
           </View>
     
