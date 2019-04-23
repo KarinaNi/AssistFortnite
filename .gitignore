@@ -57,4 +57,4 @@ buck-out/
 .expo/settings.json
 .expo/packager-info.json
 
-functions/firebase-debug.log
+functions/
