@@ -26,7 +26,7 @@ export default class PatchNotesScreen extends React.Component {
     return (
       <View style={styles.container}>
         <WebView
-          source={{uri: 'https://www.ign.com/wikis/fortnite/Weekly_Challenges'}}
+          source={{uri: 'https://fortnitemaster.com/battle-pass-guides'}}
         />
         {this.state.loading &&
           <View style={styles.activityIndicatorStyle}>
