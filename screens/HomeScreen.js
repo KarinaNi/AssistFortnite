@@ -1,11 +1,11 @@
 import React from 'react';
-import { Picker, TextInput, Text, TouchableOpacity, View, ImageBackground, ActivityIndicator, Alert, BackHandler, StatusBar } from 'react-native';
+import { Picker, TextInput, Text, TouchableOpacity, View, ImageBackground, ActivityIndicator, NetInfo, Alert, BackHandler, StatusBar } from 'react-native';
+import firebase from '../fire'
 import { getUserStats, getServerStatus } from '../api';
 import styles from '../styles';
 import background from '../assets/images/background.jpg'
-import { NetInfo } from 'react-native';
 import { Permissions, Notifications } from 'expo';
-import firebase from '../fire'
+
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -69,6 +69,10 @@ export default class HomeScreen extends React.Component {
     var docRef = firebase.firestore().collection("fortnite").doc("users");
     docRef.update({
         [uid] : token
+    })
+    .then(() => console.log("Document updated!"))
+    .catch((error) => {
+      console.warn(error)
     })
   }
 
