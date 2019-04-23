@@ -9,7 +9,9 @@ exports.updateDailyStore = functions.https.onRequest((req, res) => {
     return fetch('https://fortnite-public-api.theapinetwork.com/prod09/store/get')
     .then(res => res.json())
     .then(json => {
-        return res.send(admin.firestore().collection('fortnite').doc('dailyStore').set(json))
+        admin.firestore().collection('fortnite').doc('dailyStore').set(json).then(() => {
+            res.send('OK')
+        })
     })
     .catch(error => console.log(error))
 })
@@ -19,7 +21,9 @@ exports.updateWeaponStats = functions.https.onRequest((req, res) => {
     return fetch('https://fortnite-public-api.theapinetwork.com/prod09/weapons/get')
     .then(res => res.json())
     .then(json => {
-        return res.send(admin.firestore().collection('fortnite').doc('weapons').set(json))
+       admin.firestore().collection('fortnite').doc('weapons').set(json).then(() => {
+            res.send('OK')
+       })
     })
     .catch(error => console.log(error))
 })
@@ -61,5 +65,8 @@ exports.onStoreUpdate = functions.firestore
                 }
             }
             return pushToExpo()
+        })
+        .catch((error) => {
+            console.error(error)
         })
     })
