@@ -62,6 +62,4 @@ exports.onStoreUpdate = functions.firestore
             }
             return pushToExpo()
         })
-        // Don't worry about this, this is to prevent an Unhandled promise rejection
-        // return change.before.ref.get()
     })
