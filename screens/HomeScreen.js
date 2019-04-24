@@ -1,9 +1,11 @@
 import React from 'react';
-import { Picker, TextInput, Text, TouchableOpacity, View, ImageBackground, ActivityIndicator, Alert, BackHandler, StatusBar } from 'react-native';
+import { Picker, TextInput, Text, TouchableOpacity, View, ImageBackground, ActivityIndicator, NetInfo, Alert, BackHandler, StatusBar } from 'react-native';
+import firebase from '../fire'
 import { getUserStats, getServerStatus } from '../api';
 import styles from '../styles';
 import background from '../assets/images/background.jpg'
-import { NetInfo } from 'react-native';
+import { Permissions, Notifications } from 'expo';
+
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -16,8 +18,13 @@ export default class HomeScreen extends React.Component {
       username: '',
       pickerPlatform: 'pc',
       loading: false,
-      serverColor: 'black'
+      serverColor: 'orange'
     };
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) 
+        this.registerForPushNotificationsAsync(user.uid)
+    });
   }
 
   componentDidMount() {
@@ -31,13 +38,47 @@ export default class HomeScreen extends React.Component {
           { cancelable: false })
       }
     });
-
     getServerStatus().then(statusVal => {
-      if (statusVal.status == 'UP') {
-        this.setState({ serverColor: "lawngreen" })
-      } else {
-        this.setState({ serverColor: "red" })
-      }
+      if (statusVal) {
+        if (statusVal.status == 'UP') {
+          this.setState({ serverColor: "lawngreen" })
+        } else {
+          this.setState({ serverColor: "red" })
+        }
+      } 
+    })
+    // Sign in anonymously for UID
+    if (!__DEV__) {
+      firebase.auth().signInAnonymously()
+      .catch((error) => console.log(error.message))
+    }
+  }
+
+  registerForPushNotificationsAsync = async (uid) => {
+    const { status: existingStatus } = await Permissions.getAsync(
+      Permissions.NOTIFICATIONS
+    );
+    let finalStatus = existingStatus;
+    if (existingStatus !== 'granted') {
+      // Notification permission for iOS
+      const { status } = await Permissions.askAsync(Permissions.NOTIFICATIONS);
+      finalStatus = status;
+    }
+    if (finalStatus !== 'granted') {
+      return;
+    }
+
+    let token = await Notifications.getExpoPushTokenAsync();
+
+    // POST the token to your backend server from where you can retrieve it to send push notifications.
+    // Only if in production mode
+    var docRef = firebase.firestore().collection("fortnite").doc("users");
+    docRef.update({
+      [uid] : token
+    })
+    .then(() => console.log("Document updated!"))
+    .catch((error) => {
+      console.warn(error)
     })
   }
 

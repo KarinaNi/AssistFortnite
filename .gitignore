@@ -56,3 +56,5 @@ buck-out/
 *.jsbundle
 .expo/settings.json
 .expo/packager-info.json
+
+functions/

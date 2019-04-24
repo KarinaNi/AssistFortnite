@@ -1,12 +1,13 @@
-
+import firebase from './fire'
+const db = firebase.firestore()
 
 export function getDailyStore() {
-    return fetch('https://fortnite-public-api.theapinetwork.com/prod09/store/get')
-        .then((response) => {
-            return response.json()})
-        .catch((error) => {
-        console.error(error);
-        });
+    var docRef = db.collection("fortnite").doc("dailyStore");
+     return docRef.get().then((doc) => {
+        return doc.data()
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
 }
 
 export function getUserStats(platform,username) {
@@ -38,19 +39,19 @@ export function getUpcomingItems() {
 }
 
 export function getWeapons() {
-    return fetch('https://fortnite-public-api.theapinetwork.com/prod09/weapons/get')
-        .then((response) => {
-            return response.json()})
-        .catch((error) => {
-        console.error(error);
-        });
+    var docRef = db.collection("fortnite").doc("weapons");
+     return docRef.get().then((doc) => {
+        return doc.data()
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
 }
 
 export function getServerStatus() {
-    return fetch('https://fortnite-public-api.theapinetwork.com/prod09/status/fortnite_server_status')
-        .then((response) => {
-            return response.json()})
-        .catch((error) => {
-        console.error(error);
-        });
+    var docRef = db.collection("fortnite").doc("status");
+    return docRef.get().then((doc) => {
+        return doc.data()
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
 }

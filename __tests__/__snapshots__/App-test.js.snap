@@ -55,7 +55,7 @@ exports[`homescreen tests renders correctly 1`] = `
         style={
           Object {
             "alignSelf": "center",
-            "backgroundColor": "black",
+            "backgroundColor": "orange",
             "borderRadius": 12,
             "height": 12,
             "marginRight": 3,
@@ -844,6 +844,7 @@ exports[`random dropper screen tests renders correctly 1`] = `
     <View
       style={
         Object {
+          "alignItems": "center",
           "flex": 1,
           "flexDirection": "column",
           "justifyContent": "space-evenly",
@@ -853,39 +854,19 @@ exports[`random dropper screen tests renders correctly 1`] = `
       <View
         style={
           Object {
-            "alignItems": "center",
-            "backgroundColor": "rgba(43, 75, 149, 0.25)",
-            "borderRadius": 5,
             "flex": 0.4,
-            "flexDirection": "column",
-            "justifyContent": "center",
-            "margin": 10,
           }
         }
       >
-        <Text
+        <Image
+          source=" "
           style={
             Object {
-              "color": "#ffffff",
-              "fontSize": 25,
-              "fontWeight": "bold",
+              "height": 375,
+              "width": 375,
             }
           }
-        >
-          Strategy
-        </Text>
-        <Text
-          style={
-            Object {
-              "color": "#ffffff",
-              "fontSize": 40,
-              "fontWeight": "bold",
-              "marginBottom": 5,
-            }
-          }
-        >
-          
-        </Text>
+        />
       </View>
       <View
         style={
@@ -895,7 +876,7 @@ exports[`random dropper screen tests renders correctly 1`] = `
             "borderRadius": 5,
             "flex": 0.4,
             "flexDirection": "column",
-            "justifyContent": "center",
+            "justifyContent": "space-evenly",
             "margin": 10,
           }
         }
@@ -921,7 +902,44 @@ exports[`random dropper screen tests renders correctly 1`] = `
             }
           }
         >
-          
+           
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "rgba(43, 75, 149, 0.25)",
+            "borderRadius": 5,
+            "flex": 0.4,
+            "flexDirection": "column",
+            "justifyContent": "space-evenly",
+            "margin": 10,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ffffff",
+              "fontSize": 25,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Strategy
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#ffffff",
+              "fontSize": 40,
+              "fontWeight": "bold",
+              "marginBottom": 5,
+            }
+          }
+        >
+           
         </Text>
       </View>
       <View
