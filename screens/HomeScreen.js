@@ -1,11 +1,11 @@
 import React from 'react';
-import { Picker, TextInput, Text, TouchableOpacity, View, ImageBackground, ActivityIndicator, Alert, BackHandler, StatusBar } from 'react-native';
+import { Picker, TextInput, Text, TouchableOpacity, View, ImageBackground, ActivityIndicator, NetInfo, Alert, BackHandler, StatusBar } from 'react-native';
+import firebase from '../fire'
 import { getUserStats, getServerStatus } from '../api';
 import styles from '../styles';
 import background from '../assets/images/background.jpg'
-import { NetInfo } from 'react-native';
 import { Permissions, Notifications } from 'expo';
-import firebase from '../fire'
+
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -18,8 +18,13 @@ export default class HomeScreen extends React.Component {
       username: '',
       pickerPlatform: 'pc',
       loading: false,
-      serverColor: 'black'
+      serverColor: 'orange'
     };
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) 
+        this.registerForPushNotificationsAsync(user.uid)
+    });
   }
 
   componentDidMount() {
@@ -34,52 +39,46 @@ export default class HomeScreen extends React.Component {
       }
     });
     getServerStatus().then(statusVal => {
-      if (statusVal.status == 'UP') {
-        this.setState({ serverColor: "lawngreen" })
-      } else {
-        this.setState({ serverColor: "red" })
-      }
+      if (statusVal) {
+        if (statusVal.status == 'UP') {
+          this.setState({ serverColor: "lawngreen" })
+        } else {
+          this.setState({ serverColor: "red" })
+        }
+      } 
     })
     // Sign in anonymously for UID
-    firebase.auth().signInAnonymously()
-    .catch((error) => console.log(error.message))
-
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        // User logged in already or has just logged in.
-        this.registerForPushNotificationsAsync(user.uid)
-      } else {
-        // User not logged in or has just logged out.
-      }
-    });
+    if (!__DEV__) {
+      firebase.auth().signInAnonymously()
+      .catch((error) => console.log(error.message))
+    }
   }
 
   registerForPushNotificationsAsync = async (uid) => {
-    var docRef = firebase.firestore().collection("fortnite").doc("users");
     const { status: existingStatus } = await Permissions.getAsync(
       Permissions.NOTIFICATIONS
     );
     let finalStatus = existingStatus;
-
-    // only ask if permissions have not already been determined, because
-    // iOS won't necessarily prompt the user a second time.
     if (existingStatus !== 'granted') {
-      // Android remote notification permissions are granted during the app
-      // install, so this will only ask on iOS
+      // Notification permission for iOS
       const { status } = await Permissions.askAsync(Permissions.NOTIFICATIONS);
       finalStatus = status;
     }
-
-    // Stop here if the user did not grant permissions
     if (finalStatus !== 'granted') {
       return;
     }
 
-    // Get the token that uniquely identifies this device
     let token = await Notifications.getExpoPushTokenAsync();
+
     // POST the token to your backend server from where you can retrieve it to send push notifications.
+    // Only if in production mode
+    var docRef = firebase.firestore().collection("fortnite").doc("users");
     docRef.update({
-        [uid] : token
+      [uid] : token
+    })
+    .then(() => console.log("Document updated!"))
+    .catch((error) => {
+      console.warn(error)
     })
   }
 

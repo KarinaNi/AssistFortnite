@@ -1,0 +1,6 @@
+export const API_KEY="AIzaSyDgH5mSmcCw2wQOHKZSL24ZST11UqKowB0"
+export const AUTH_DOMAIN="assistant-for-fortnite.firebaseapp.com"
+export const DB_URL="https://assistant-for-fortnite.firebaseio.com" 
+export const PROJECT_ID="assistant-for-fortnite"
+export const STORAGE_BUCKET="assistant-for-fortnite.appspot.com"
+export const MESSAGING_SENDER_ID="1079582520882"
