@@ -57,5 +57,4 @@ buck-out/
 .expo/settings.json
 .expo/packager-info.json
 
-# .env
-FirebaseConfig.js
+functions/

@@ -4,6 +4,17 @@
     "slug": "fortniteAssistant",
     "privacy": "public",
     "sdkVersion": "32.0.0",
+    "icon": "./assets/images/icon.png",
+    "splash": {
+      "backgroundColor": "#4E4C4C",
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain"
+    },
+    "notification": {
+      "icon": "./assets/images/notificon.png",
+      "color": "#9A35C9",
+      "androidMode": "default"
+    },
     "platforms": [
       "ios",
       "android"
