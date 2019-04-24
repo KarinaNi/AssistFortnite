@@ -15,7 +15,8 @@
 
 For detailed Expo instructions visit [Up and Running](https://docs.expo.io/versions/latest/workflow/up-and-running/).
 
-If you'd like to install our application, the latest version can be found [here](https://github.com/KarinaNi/AssistFortnite/releases)
+If you'd like to install our app on your phone, the latest version can be found [here](https://github.com/KarinaNi/AssistFortnite/releases).
+__Note:__ We currently only provide an .apk for Android devices. If you'd like to run this on iOS. Follow the instructions [below](#to-test)
 
 ## To Test:
 
