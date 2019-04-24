@@ -18,8 +18,13 @@ export default class HomeScreen extends React.Component {
       username: '',
       pickerPlatform: 'pc',
       loading: false,
-      serverColor: 'black'
+      serverColor: 'orange'
     };
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) 
+        this.registerForPushNotificationsAsync(user.uid)
+    });
   }
 
   componentDidMount() {
@@ -34,20 +39,19 @@ export default class HomeScreen extends React.Component {
       }
     });
     getServerStatus().then(statusVal => {
-      if (statusVal.status == 'UP') {
-        this.setState({ serverColor: "lawngreen" })
-      } else {
-        this.setState({ serverColor: "red" })
-      }
+      if (statusVal) {
+        if (statusVal.status == 'UP') {
+          this.setState({ serverColor: "lawngreen" })
+        } else {
+          this.setState({ serverColor: "red" })
+        }
+      } 
     })
     // Sign in anonymously for UID
-    firebase.auth().signInAnonymously()
-    .catch((error) => console.log(error.message))
-
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) 
-        this.registerForPushNotificationsAsync(user.uid)
-    });
+    if (!__DEV__) {
+      firebase.auth().signInAnonymously()
+      .catch((error) => console.log(error.message))
+    }
   }
 
   registerForPushNotificationsAsync = async (uid) => {
@@ -65,10 +69,12 @@ export default class HomeScreen extends React.Component {
     }
 
     let token = await Notifications.getExpoPushTokenAsync();
+
     // POST the token to your backend server from where you can retrieve it to send push notifications.
+    // Only if in production mode
     var docRef = firebase.firestore().collection("fortnite").doc("users");
     docRef.update({
-        [uid] : token
+      [uid] : token
     })
     .then(() => console.log("Document updated!"))
     .catch((error) => {
