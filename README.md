@@ -15,8 +15,7 @@
 
 For detailed Expo instructions visit [Up and Running](https://docs.expo.io/versions/latest/workflow/up-and-running/).
 
-Our application is also published on Expo [here](https://expo.io/@bowenclow/fortniteAssistant).  
-Where it can be run on your own Android device or the provided in-browser emulator.
+If you'd like to install our application, the latest version can be found [here](https://github.com/KarinaNi/AssistFortnite/releases)
 
 ## To Test:
 
