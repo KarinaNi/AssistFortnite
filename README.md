@@ -1,4 +1,4 @@
-# Assistant for Fortnite App [![Build Status](https://travis-ci.com/KarinaNi/AssistFortnite.svg?branch=master)](https://travis-ci.com/KarinaNi/AssistFortnite)
+# Assistant for Fortnite App
  
 
 ## Build Requirements:
