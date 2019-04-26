@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1556145606562" clover="3.2.0">
-  <project timestamp="1556145606562" name="All files">
-    <metrics statements="314" coveredstatements="219" conditionals="141" coveredconditionals="100" methods="104" coveredmethods="61" elements="559" coveredelements="380" complexity="0" loc="314" ncloc="314" packages="5" files="39" classes="39"/>
-    <package name="AssistFortnite">
-      <metrics statements="32" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="18" coveredmethods="0"/>
-      <file name="FirebaseConfig.js" path="C:\Users\ahmad\Desktop\React\AssistFortnite\FirebaseConfig.js">
-        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-      </file>
-      <file name="api.js" path="C:\Users\ahmad\Desktop\React\AssistFortnite\api.js">
+<coverage generated="1556316380387" clover="3.2.0">
+  <project timestamp="1556316380387" name="All files">
+    <metrics statements="282" coveredstatements="187" conditionals="141" coveredconditionals="100" methods="104" coveredmethods="61" elements="527" coveredelements="348" complexity="0" loc="282" ncloc="282" packages="5" files="12" classes="12"/>
+    <package name="fortniteAssistant">
+      <metrics statements="26" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="18" coveredmethods="0"/>
+      <file name="api.js" path="C:\Users\bbclow\Documents\FortniteAssistant\fortniteAssistant\api.js">
         <metrics statements="22" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="18" coveredmethods="0"/>
         <line num="2" count="1" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
@@ -38,20 +29,20 @@
         <line num="53" count="0" type="stmt"/>
         <line num="55" count="0" type="stmt"/>
       </file>
-      <file name="fire.js" path="C:\Users\ahmad\Desktop\React\AssistFortnite\fire.js">
+      <file name="fire.js" path="C:\Users\bbclow\Documents\FortniteAssistant\fortniteAssistant\fire.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
       </file>
-      <file name="styles.js" path="C:\Users\ahmad\Desktop\React\AssistFortnite\styles.js">
+      <file name="styles.js" path="C:\Users\bbclow\Documents\FortniteAssistant\fortniteAssistant\styles.js">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
-    <package name="AssistFortnite.assets">
+    <package name="fortniteAssistant.assets">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="__mockAPI.js" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\__mockAPI.js">
+      <file name="__mockAPI.js" path="C:\Users\bbclow\Documents\FortniteAssistant\fortniteAssistant\assets\__mockAPI.js">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -60,120 +51,16 @@
         <line num="5" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="AssistFortnite.assets.images">
-      <metrics statements="27" coveredstatements="27" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="Block.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\Block.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="Castle.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\Castle.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="Disco.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\Disco.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="Dusty.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\Dusty.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="Fatal.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\Fatal.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="Frosty.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\Frosty.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="Happy.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\Happy.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="Haunted.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\Haunted.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="Junk.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\Junk.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="Lazy.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\Lazy.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="Lonely.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\Lonely.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="Loot.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\Loot.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="Lucky.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\Lucky.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="Mansion.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\Mansion.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="Paradise.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\Paradise.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="Polar.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\Polar.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="RV.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\RV.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="Retail.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\Retail.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="Salty.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\Salty.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="Shifty.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\Shifty.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="Snobby.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\Snobby.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="Soccer.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\Soccer.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="Spot.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\Spot.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="Sunny.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\Sunny.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="Tilted.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\Tilted.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="Volcano.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\Volcano.jpg">
-        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-      </file>
-      <file name="background.jpg" path="C:\Users\ahmad\Desktop\React\AssistFortnite\assets\images\background.jpg">
+    <package name="fortniteAssistant.assets.images">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="background.jpg" path="C:\Users\bbclow\Documents\FortniteAssistant\fortniteAssistant\assets\images\background.jpg">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="AssistFortnite.components">
+    <package name="fortniteAssistant.components">
       <metrics statements="24" coveredstatements="14" conditionals="12" coveredconditionals="9" methods="13" coveredmethods="4"/>
-      <file name="ButtonBar.js" path="C:\Users\ahmad\Desktop\React\AssistFortnite\components\ButtonBar.js">
+      <file name="ButtonBar.js" path="C:\Users\bbclow\Documents\FortniteAssistant\fortniteAssistant\components\ButtonBar.js">
         <metrics statements="24" coveredstatements="14" conditionals="12" coveredconditionals="9" methods="13" coveredmethods="4"/>
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
@@ -201,9 +88,9 @@
         <line num="128" count="0" type="stmt"/>
       </file>
     </package>
-    <package name="AssistFortnite.screens">
+    <package name="fortniteAssistant.screens">
       <metrics statements="226" coveredstatements="162" conditionals="129" coveredconditionals="91" methods="73" coveredmethods="57"/>
-      <file name="HomeScreen.js" path="C:\Users\ahmad\Desktop\React\AssistFortnite\screens\HomeScreen.js">
+      <file name="HomeScreen.js" path="C:\Users\bbclow\Documents\FortniteAssistant\fortniteAssistant\screens\HomeScreen.js">
         <metrics statements="71" coveredstatements="44" conditionals="23" coveredconditionals="11" methods="36" coveredmethods="28"/>
         <line num="16" count="2" type="stmt"/>
         <line num="17" count="2" type="stmt"/>
@@ -277,7 +164,7 @@
         <line num="298" count="1" type="stmt"/>
         <line num="309" count="1" type="stmt"/>
       </file>
-      <file name="ItemShopScreen.js" path="C:\Users\ahmad\Desktop\React\AssistFortnite\screens\ItemShopScreen.js">
+      <file name="ItemShopScreen.js" path="C:\Users\bbclow\Documents\FortniteAssistant\fortniteAssistant\screens\ItemShopScreen.js">
         <metrics statements="16" coveredstatements="14" conditionals="6" coveredconditionals="6" methods="10" coveredmethods="8"/>
         <line num="14" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
@@ -296,19 +183,19 @@
         <line num="75" count="7" type="stmt"/>
         <line num="78" count="0" type="stmt"/>
       </file>
-      <file name="RandomDropGeneratorScreen.js" path="C:\Users\ahmad\Desktop\React\AssistFortnite\screens\RandomDropGeneratorScreen.js">
+      <file name="RandomDropGeneratorScreen.js" path="C:\Users\bbclow\Documents\FortniteAssistant\fortniteAssistant\screens\RandomDropGeneratorScreen.js">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
-        <line num="41" count="2" type="stmt"/>
-        <line num="42" count="2" type="stmt"/>
-        <line num="50" count="1" type="stmt"/>
-        <line num="78" count="1" type="stmt"/>
-        <line num="87" count="1" type="stmt"/>
-        <line num="88" count="1" type="stmt"/>
-        <line num="90" count="1" type="stmt"/>
-        <line num="97" count="3" type="stmt"/>
-        <line num="126" count="1" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="61" count="3" type="stmt"/>
+        <line num="86" count="1" type="stmt"/>
       </file>
-      <file name="StatTrackerScreen.js" path="C:\Users\ahmad\Desktop\React\AssistFortnite\screens\StatTrackerScreen.js">
+      <file name="StatTrackerScreen.js" path="C:\Users\bbclow\Documents\FortniteAssistant\fortniteAssistant\screens\StatTrackerScreen.js">
         <metrics statements="104" coveredstatements="76" conditionals="94" coveredconditionals="69" methods="10" coveredmethods="9"/>
         <line num="15" count="2" type="stmt"/>
         <line num="16" count="2" type="stmt"/>
@@ -415,7 +302,7 @@
         <line num="242" count="6" type="stmt"/>
         <line num="246" count="16" type="stmt"/>
       </file>
-      <file name="WeekScreen.js" path="C:\Users\ahmad\Desktop\React\AssistFortnite\screens\WeekScreen.js">
+      <file name="WeekScreen.js" path="C:\Users\bbclow\Documents\FortniteAssistant\fortniteAssistant\screens\WeekScreen.js">
         <metrics statements="11" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="6" coveredmethods="4"/>
         <line num="8" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
@@ -429,7 +316,7 @@
         <line num="39" count="0" type="stmt"/>
         <line num="41" count="10" type="stmt"/>
       </file>
-      <file name="WeeklyChallengesScreen.js" path="C:\Users\ahmad\Desktop\React\AssistFortnite\screens\WeeklyChallengesScreen.js">
+      <file name="WeeklyChallengesScreen.js" path="C:\Users\bbclow\Documents\FortniteAssistant\fortniteAssistant\screens\WeeklyChallengesScreen.js">
         <metrics statements="15" coveredstatements="11" conditionals="4" coveredconditionals="3" methods="7" coveredmethods="4"/>
         <line num="13" count="2" type="stmt"/>
         <line num="14" count="2" type="stmt"/>

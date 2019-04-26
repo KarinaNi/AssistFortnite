@@ -96,7 +96,7 @@ export default class WeeklyChallengesScreen extends React.Component {
                 <Picker.Item label="Quick Builder" value="quickBuilder" color="black" />
               </Picker>
             </View>
-            <View style={styles.controlScreenPickerBar}>
+            <View style={styles.controlScreenPickerBar}> 
               <Picker
                 prompt='Select a Mode'
                 style={{ flex: 1, width: 200, height: 50 }}
